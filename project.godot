@@ -10,14 +10,20 @@ config_version=5
 
 [application]
 
-config/name="GGJ2026"
-config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/name="ggj-2026"
+run/main_scene="res://scenes/game.tscn"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://assets/icon.svg"
 
+[physics]
 [autoload]
 
 GameManager="*res://game-manager/game_manager.gd"
 
 [dotnet]
 
-project/assembly_name="GGJ2026"
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
