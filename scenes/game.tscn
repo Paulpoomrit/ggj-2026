@@ -11,7 +11,7 @@
 size = Vector2(329, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(273.5, 276)
+size = Vector2(157.5, 156)
 
 [node name="Game" type="Node2D" unique_id=75766549]
 
@@ -48,10 +48,10 @@ position = Vector2(318, -138)
 script = ExtResource("3_lbhrr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1229895370]
-position = Vector2(1.5258789e-05, -0.99998474)
-scale = Vector2(0.43125, 0.43125)
+position = Vector2(-58.49998, 60.000004)
+scale = Vector2(0.24843752, 0.24062505)
 texture = ExtResource("3_lnu2h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=908228525]
-position = Vector2(0.25, 0)
+position = Vector2(-57.75, 60)
 shape = SubResource("RectangleShape2D_iywne")
