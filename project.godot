@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ggj-2026"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="uid://b1xoobs8p1swo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -50,6 +50,10 @@ jump={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="platforms"
 
 [rendering]
 
