@@ -10,6 +10,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
 size = Vector2(329, 40)
 
+[sub_resource type="GDScript" id="GDScript_lbhrr"]
+script/source = "extends VisibleOnScreenNotifier2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
 size = Vector2(157.5, 156)
 
@@ -43,15 +57,39 @@ position = Vector2(396.99997, 333)
 scale = Vector2(2.5742188, 0.31640637)
 texture = ExtResource("2_yqjtg")
 
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=2082988165]
+[node name="LandEnemy" type="CharacterBody2D" parent="." unique_id=2082988165]
 position = Vector2(318, -138)
 script = ExtResource("3_lbhrr")
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1229895370]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="LandEnemy" unique_id=2138466459]
+position = Vector2(-127, -8)
+rect = Rect2(-10, -10, 158, 156)
+script = SubResource("GDScript_lbhrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="LandEnemy" unique_id=1229895370]
 position = Vector2(-58.49998, 60.000004)
 scale = Vector2(0.24843752, 0.24062505)
 texture = ExtResource("3_lnu2h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=908228525]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LandEnemy" unique_id=908228525]
+position = Vector2(-57.75, 60)
+shape = SubResource("RectangleShape2D_iywne")
+
+[node name="FloatingEnemy" type="CharacterBody2D" parent="." unique_id=1553586663]
+position = Vector2(-250, -272)
+motion_mode = 1
+script = ExtResource("3_lbhrr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="FloatingEnemy" unique_id=832509728]
+position = Vector2(-127, -8)
+rect = Rect2(-10, -10, 158, 156)
+script = SubResource("GDScript_lbhrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="FloatingEnemy" unique_id=801212767]
+position = Vector2(-58.49998, 60.000004)
+scale = Vector2(0.24843752, 0.24062505)
+texture = ExtResource("3_lnu2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingEnemy" unique_id=986976467]
 position = Vector2(-57.75, 60)
 shape = SubResource("RectangleShape2D_iywne")

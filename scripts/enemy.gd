@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var vis = $VisibleOnScreenNotifier2D
 const ENEMY_SPEED = 100
 
 var direction = 1
@@ -22,15 +23,19 @@ func handle_emotion_state_changed(state: GameManager.GAME_STATE) -> void:
 		GameManager.GAME_STATE.SAD:
 			current_mask = GameManager.GAME_STATE.SAD
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() && motion_mode == MOTION_MODE_GROUNDED:
 		velocity += get_gravity() * delta
 	
 	match current_mask:
 		GameManager.GAME_STATE.HAPPY:
 			var player = get_node("../Player")
-			var player_pos_x = player.position.x
+			var player_radius = player.get_node("CollisionShape2D").shape.radius
+			
+			var player_pos_x = player.position.x + player_radius
+
 			if (position.x <= player_pos_x):
 				direction = 1
 			else:
@@ -41,7 +46,9 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 		GameManager.GAME_STATE.ANGRY:
 			var player = get_node("../Player")
-			var player_pos_x = player.position.x
+			var player_radius = player.get_node("CollisionShape2D").shape.radius
+			
+			var player_pos_x = player.position.x + player_radius
 			
 			if (position.x <= player_pos_x):
 				direction = -1
