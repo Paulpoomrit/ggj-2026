@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b1xoobs8p1swo"]
+[gd_scene load_steps=11 format=4 uid="uid://b1xoobs8p1swo"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
 [ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="1_gmgay"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rcchusq3cd27" path="res://scenes/ground_enemy.tscn" id="4_e7anx"]
 [ext_resource type="PackedScene" uid="uid://bsuot5fath7hk" path="res://scenes/PressurePlate.tscn" id="5_ur00s"]
 [ext_resource type="PackedScene" uid="uid://c7eme558vq3y" path="res://scenes/Gate.tscn" id="6_wndkh"]
+[ext_resource type="PackedScene" uid="uid://c8k6kv2h75xam" path="res://UI/pause_menu.tscn" id="7_hu4x8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_46lwt")
@@ -566,3 +567,16 @@ position = Vector2(5445, 383)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(6317, 340)
 shape = SubResource("RectangleShape2D_e7anx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_hu4x8")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
