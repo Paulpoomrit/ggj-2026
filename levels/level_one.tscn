@@ -1,11 +1,13 @@
-[gd_scene format=4 uid="uid://brhxug8pmagid"]
+[gd_scene format=4 uid="uid://rpur0a77stqk"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
-[ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_m04wh"]
+[ext_resource type="PackedScene" path="res://scenes/background_paper.tscn" id="1_m04wh"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_x25rp"]
-[ext_resource type="PackedScene" path="res://scenes/ground_enemy.tscn" id="4_e7anx"]
+[ext_resource type="PackedScene" uid="uid://rcchusq3cd27" path="res://scenes/ground_enemy.tscn" id="4_e7anx"]
 [ext_resource type="PackedScene" uid="uid://bsuot5fath7hk" path="res://scenes/PressurePlate.tscn" id="5_ur00s"]
 [ext_resource type="PackedScene" path="res://scenes/Gate.tscn" id="6_wndkh"]
+[ext_resource type="PackedScene" uid="uid://cs03kjms5pat2" path="res://scenes/Exit.tscn" id="7_hu4x8"]
+[ext_resource type="PackedScene" path="res://levels/level_two.tscn" id="8_jj3p3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_46lwt")
@@ -517,9 +519,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_x25rp")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7anx"]
-size = Vector2(408, 241)
-
 [node name="TestLevel" type="Node2D" unique_id=625540259]
 
 [node name="BackgroundPaper" parent="." unique_id=1925208301 instance=ExtResource("1_m04wh")]
@@ -532,7 +531,7 @@ tile_map_data = PackedByteArray("AAAAABAAAAABAAAAAAABABAAAAABAAAAAAACABAAAAABAAA
 tile_set = SubResource("TileSet_gmgay")
 
 [node name="Player" parent="." unique_id=167935001 instance=ExtResource("2_x25rp")]
-position = Vector2(467, 961)
+position = Vector2(213, 962)
 
 [node name="GroundEnemy" parent="." unique_id=360479525 instance=ExtResource("4_e7anx")]
 position = Vector2(931, 940)
@@ -557,8 +556,6 @@ target_object = NodePath("../Rename2")
 [node name="GroundEnemy3" parent="." unique_id=1889721906 instance=ExtResource("4_e7anx")]
 position = Vector2(5445, 383)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=182615184]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=712529526]
-position = Vector2(6317, 340)
-shape = SubResource("RectangleShape2D_e7anx")
+[node name="Node2D" parent="." unique_id=1898458638 instance=ExtResource("7_hu4x8")]
+position = Vector2(6299, 387)
+level_to_load = ExtResource("8_jj3p3")
