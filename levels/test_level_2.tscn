@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b1pcykdp361ti"]
+[gd_scene load_steps=7 format=4 uid="uid://b1pcykdp361ti"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_djtih"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_rp2j6"]
@@ -525,11 +525,38 @@ tile_set = SubResource("TileSet_gmgay")
 [node name="Player" parent="." instance=ExtResource("2_rp2j6")]
 position = Vector2(160, 1215)
 
-[node name="PressurePlate" parent="." instance=ExtResource("3_rp2j6")]
-position = Vector2(1684, 1075)
-
-[node name="DisappearingPlatform" parent="." instance=ExtResource("4_dar1n")]
+[node name="Platform1" parent="." instance=ExtResource("4_dar1n")]
 tile_map_data = PackedByteArray("AAD+/w0AAAAJAAEAAAD9/w0AAAAJAAEAAAA=")
 
-[node name="DisappearingPlatform2" parent="." instance=ExtResource("4_dar1n")]
+[node name="Platform2" parent="." instance=ExtResource("4_dar1n")]
 tile_map_data = PackedByteArray("AAD7/wsAAAAJAAEAAAD6/wsAAAAJAAEAAAA=")
+
+[node name="PressurePlate1" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(1134, 1213)
+
+[node name="PressurePlate2" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(1678, 735)
+
+[node name="PressurePlate3" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(1134, 257)
+
+[node name="PressurePlate4" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(1405, -222)
+
+[node name="PressurePlate5" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(1675, -702)
+
+[node name="PressurePlate6" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(-1661, 1212)
+
+[node name="PressurePlate7" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(-1116, 738)
+
+[node name="PressurePlate8" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(-1394, 256)
+
+[node name="PressurePlate9" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(-1675, -221)
+
+[node name="PressurePlate10" parent="." instance=ExtResource("3_rp2j6")]
+position = Vector2(-1391, -706)

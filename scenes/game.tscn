@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://assets/icon.svg" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://rcchusq3cd27" path="res://scenes/ground_enemy.tscn" id="3_iywne"]
 [ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="3_lnu2h"]
 
@@ -57,23 +58,8 @@ position = Vector2(396.99997, 333)
 scale = Vector2(2.5742188, 0.31640637)
 texture = ExtResource("2_yqjtg")
 
-[node name="GroundEnemy" type="CharacterBody2D" parent="." unique_id=2082988165]
+[node name="GroundEnemy" parent="." unique_id=489110386 instance=ExtResource("3_iywne")]
 position = Vector2(318, -138)
-script = ExtResource("3_lbhrr")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="GroundEnemy" unique_id=2138466459]
-position = Vector2(-127, -8)
-rect = Rect2(-10, -10, 158, 156)
-script = SubResource("GDScript_lbhrr")
-
-[node name="Sprite2D" type="Sprite2D" parent="GroundEnemy" unique_id=1229895370]
-position = Vector2(-58.49998, 60.000004)
-scale = Vector2(0.24843752, 0.24062505)
-texture = ExtResource("3_lnu2h")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundEnemy" unique_id=908228525]
-position = Vector2(-57.75, 60)
-shape = SubResource("RectangleShape2D_iywne")
 
 [node name="FloatingEnemy" type="CharacterBody2D" parent="." unique_id=1553586663]
 position = Vector2(-250, -272)
