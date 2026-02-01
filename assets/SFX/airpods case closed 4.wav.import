@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djsyv1ffdd8fd"
+path="res://.godot/imported/airpods case closed 4.wav-e58352a74d30d0254d9f65651603efee.sample"
+
+[deps]
+
+source_file="res://assets/SFX/airpods case closed 4.wav"
+dest_files=["res://.godot/imported/airpods case closed 4.wav-e58352a74d30d0254d9f65651603efee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

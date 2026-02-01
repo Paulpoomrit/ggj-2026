@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 
 func on_pressure_plate_state_changed(should_open: bool, target_platform: Node):
-	if target_platform != self:
-		return
-	self.visible = should_open
-	self.collision_enabled = true
+	if target_platform == self:
+		self.visible = should_open
+		self.collision_enabled = should_open
+	return
