@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bbcodny7t0oru" path="res://scenes/pressure_plate.gd" id="1_3d7tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8fxf"]
-size = Vector2(323, 212)
+size = Vector2(313, 75)
 
 [node name="PressurePlate" type="Area2D"]
 script = ExtResource("1_3d7tj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(151.5, 96)
+position = Vector2(156.5, 27.5)
 shape = SubResource("RectangleShape2D_v8fxf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
