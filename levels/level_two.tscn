@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://b1pcykdp361ti"]
+[gd_scene load_steps=8 format=4 uid="uid://b1pcykdp361ti"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_d0lx0"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_e70pa"]
 [ext_resource type="PackedScene" uid="uid://crgofd1uegact" path="res://scenes/disappearing_platform.tscn" id="3_ba5af"]
 [ext_resource type="PackedScene" uid="uid://bsuot5fath7hk" path="res://scenes/PressurePlate.tscn" id="4_d3qt7"]
-[ext_resource type="PackedScene" uid="uid://rcchusq3cd27" path="res://scenes/ground_enemy.tscn" id="5_2wd80"]
+[ext_resource type="PackedScene" path="res://scenes/ground_enemy.tscn" id="5_2wd80"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_d0lx0")
@@ -529,62 +529,72 @@ position = Vector2(160, 1215)
 [node name="Platform1" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAD+/w0AAAAJAAEAAAD9/w0AAAAJAAEAAAD//w0AAAAJAAEAAAA=")
 
-[node name="PressurePlate1" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate1" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(1134, 1213)
+target_platform = NodePath("../Platform1")
 
 [node name="Platform2" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAD7/wsAAAAJAAEAAAD6/wsAAAAJAAEAAAD8/wsAAAAJAAEAAAA=")
 
-[node name="PressurePlate2" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate2" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(-1116, 738)
+target_platform = NodePath("../Platform2")
 
 [node name="Platform3" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAD//wkAAAAJAAEAAAD+/wkAAAAJAAEAAAAAAAkAAAAJAAEAAAA=")
 
-[node name="PressurePlate3" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate3" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(-1661, 1212)
+target_platform = NodePath("../Platform3")
 
 [node name="Platform4" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAACAAcAAAAJAAEAAAADAAcAAAAJAAEAAAAEAAcAAAAJAAEAAAA=")
 
-[node name="PressurePlate4" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate4" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(1678, 735)
+target_platform = NodePath("../Platform4")
 
 [node name="Platform5" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAABAAMAAAAJAAEAAAAAAAMAAAAJAAEAAAACAAMAAAAJAAEAAAADAAMAAAAJAAEAAAA=")
 
-[node name="PressurePlate5" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate5" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(1134, 257)
+target_platform = NodePath("../Platform5")
 
 [node name="Platform6" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAABAP//AAAJAAEAAAAAAP//AAAJAAEAAAD/////AAAJAAEAAAA=")
 
-[node name="PressurePlate6" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate6" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(1405, -222)
+target_platform = NodePath("../Platform6")
 
 [node name="Platform7" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAAFAP3/AAAJAAEAAAAGAP3/AAAJAAEAAAAEAP3/AAAJAAEAAAA=")
 
-[node name="PressurePlate7" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate7" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(-1394, 256)
+target_platform = NodePath("../Platform7")
 
 [node name="Platform8" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAAEAPn/AAAJAAEAAAAFAPn/AAAJAAEAAAAGAPn/AAAJAAEAAAA=")
 
-[node name="PressurePlate8" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate8" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(-1675, -221)
+target_platform = NodePath("../Platform8")
 
 [node name="Platform9" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAD///f/AAAJAAEAAAAAAPf/AAAJAAEAAAABAPf/AAAJAAEAAAA=")
 
-[node name="PressurePlate9" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate9" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(-1391, -706)
+target_platform = NodePath("../Platform9")
 
 [node name="Platform10" parent="." instance=ExtResource("3_ba5af")]
 tile_map_data = PackedByteArray("AAD6//X/AAAJAAEAAAD7//X/AAAJAAEAAAD8//X/AAAJAAEAAAA=")
 
-[node name="PressurePlate10" parent="." instance=ExtResource("4_d3qt7")]
+[node name="PressurePlate10" parent="." node_paths=PackedStringArray("target_platform") instance=ExtResource("4_d3qt7")]
 position = Vector2(1675, -702)
+target_platform = NodePath("../Platform10")
 
 [node name="GroundEnemy" parent="." instance=ExtResource("5_2wd80")]
 position = Vector2(1564, 1202)
