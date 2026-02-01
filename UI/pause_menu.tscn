@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8k6kv2h75xam"]
+[gd_scene load_steps=7 format=3 uid="uid://dugh0n7fr8fmb"]
 
-[ext_resource type="Shader" uid="uid://dnijluxhxrmw3" path="res://UI/pause_menu.gdshader" id="1_hdmo1"]
-[ext_resource type="Script" uid="uid://c1h5lvly66co3" path="res://UI/pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_hdmo1"]
+[ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_nwcfo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwcfo"]
 shader = ExtResource("1_hdmo1")
@@ -74,10 +74,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 576.0
-offset_top = 324.0
-offset_right = -576.0
-offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -88,17 +84,17 @@ script = ExtResource("1_nwcfo")
 material = SubResource("ShaderMaterial_nwcfo")
 custom_minimum_size = Vector2(19.155, 0)
 layout_mode = 1
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 324.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -48.0
 offset_top = -68.0
 offset_right = 48.0

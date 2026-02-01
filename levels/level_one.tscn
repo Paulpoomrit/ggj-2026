@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://brhxug8pmagid"]
+[gd_scene load_steps=12 format=4 uid="uid://brhxug8pmagid"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_m04wh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cs03kjms5pat2" path="res://scenes/Exit.tscn" id="6_hu4x8"]
 [ext_resource type="PackedScene" uid="uid://c7eme558vq3y" path="res://scenes/Gate.tscn" id="6_wndkh"]
 [ext_resource type="PackedScene" uid="uid://b1pcykdp361ti" path="res://levels/level_two.tscn" id="7_jj3p3"]
+[ext_resource type="PackedScene" uid="uid://dugh0n7fr8fmb" path="res://UI/pause_menu.tscn" id="9_moue2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_46lwt")
@@ -560,3 +561,7 @@ level_to_load = ExtResource("7_jj3p3")
 
 [node name="Player" parent="." instance=ExtResource("2_x25rp")]
 position = Vector2(467, 961)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_moue2")]

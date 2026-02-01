@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dgw716o0wvx8o"]
+[gd_scene load_steps=10 format=4 uid="uid://dgw716o0wvx8o"]
 
 [ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="1_t8sbe"]
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="2_xw12x"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5pxmwwiwq8xn" path="res://scenes/floating_enemy.tscn" id="4_bvjaj"]
 [ext_resource type="PackedScene" uid="uid://cs03kjms5pat2" path="res://scenes/Exit.tscn" id="5_y5xn8"]
 [ext_resource type="PackedScene" uid="uid://brhxug8pmagid" path="res://levels/level_one.tscn" id="6_t8sbe"]
+[ext_resource type="PackedScene" uid="uid://dugh0n7fr8fmb" path="res://UI/pause_menu.tscn" id="7_xw12x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("2_xw12x")
@@ -550,3 +551,8 @@ position = Vector2(201, 961)
 position = Vector2(56, -489)
 scale = Vector2(3, 1)
 level_to_load = ExtResource("6_t8sbe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_xw12x")]
+metadata/_edit_use_anchors_ = true
