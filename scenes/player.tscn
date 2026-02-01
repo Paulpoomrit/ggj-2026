@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://bsfa1tlsh7fwr"]
+[gd_scene load_steps=15 format=3 uid="uid://bsfa1tlsh7fwr"]
 
 [ext_resource type="Script" uid="uid://bdf8a0uau7y2d" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dqrvbvkfvxwhw" path="res://assets/ui/Mask_select_bg.png" id="3_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://df4aoe7wr1021" path="res://assets/background_curtains.PNG" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://beiv8spglpk43" path="res://UI/item_ui.tscn" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bx6tspcfne77u" path="res://assets/Player/protag_run0001.png" id="3_y4r1p"]
@@ -52,22 +53,30 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1397412567]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1179059337]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1661857825]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, -203)
 zoom = Vector2(0.5, 0.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=252382167]
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
 position = Vector2(-0.888916, 0.5000458)
 scale = Vector2(0.5995371, 0.5995371)
 texture = ExtResource("3_dqkch")
 
-[node name="ItemUI" parent="." unique_id=1797939479 instance=ExtResource("3_qhqgy")]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1153.0
+offset_top = -37.999996
+offset_right = -62.0
+offset_bottom = 821.0
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("3_3v2ag")
+
+[node name="ItemUI" parent="." instance=ExtResource("3_qhqgy")]
 anchors_preset = 0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -80,23 +89,25 @@ grow_horizontal = 1
 grow_vertical = 1
 size_flags_vertical = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2018622725]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(45, -1.9999999)
 scale = Vector2(3.99, 3.99)
 skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1321748235]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-8, -41)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"walk"
 frame_progress = 0.3683449
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2030498301]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1407962076]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(45, -1.9999999)
 scale = Vector2(6.01, 6.01)
 skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

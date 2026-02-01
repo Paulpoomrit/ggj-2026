@@ -17,6 +17,8 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_8k1sx")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="ItemContainer" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
