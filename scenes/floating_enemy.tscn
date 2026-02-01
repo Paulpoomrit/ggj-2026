@@ -1,7 +1,8 @@
-[gd_scene load_steps=0 format=3 uid="uid://5pxmwwiwq8xn"]
+[gd_scene load_steps=7 format=3 uid="uid://5pxmwwiwq8xn"]
 
 [ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="1_t3rxf"]
 [ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="2_myl57"]
+[ext_resource type="AudioStream" uid="uid://iy1a465sl0ft" path="res://assets/Sound/Cog Loop.ogg" id="3_myl57"]
 
 [sub_resource type="GDScript" id="GDScript_lbhrr"]
 script/source = "extends VisibleOnScreenNotifier2D
@@ -23,24 +24,29 @@ size = Vector2(157.5, 156)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3rxf"]
 size = Vector2(162, 159)
 
-[node name="FloatingEnemy" type="CharacterBody2D" unique_id=1022091721]
+[node name="FloatingEnemy" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_t3rxf")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=665867462]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-69, -69)
 rect = Rect2(-10, -10, 158, 156)
 script = SubResource("GDScript_lbhrr")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=562955770]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.24843752, 0.24062505)
 texture = ExtResource("2_myl57")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353597760]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_iywne")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=537964519]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1242512980]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_t3rxf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_myl57")
+volume_db = -5.0
+autoplay = true

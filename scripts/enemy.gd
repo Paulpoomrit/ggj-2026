@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var player = get_node("../Player")
 @onready var vis = $VisibleOnScreenNotifier2D
+@onready var sound = $AudioStreamPlayer2D
 const ENEMY_SPEED = 100
 
 var direction = 1
@@ -80,3 +81,8 @@ func _physics_process(delta: float) -> void:
 			
 			
 	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if motion_mode == MOTION_MODE_GROUNDED && area.get_parent().name == "Player":
+		sound.play()

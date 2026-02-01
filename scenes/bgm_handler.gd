@@ -32,4 +32,4 @@ func switch_music(state) -> void:
 		GameManager.GAME_STATE.SAD:
 			song_selection = sad_bgm
 			
-	current_stream_ID = playback.play_stream(song_selection,main_bgm.get_playback_position(),.8)
+	current_stream_ID = playback.play_stream(song_selection,main_bgm.get_playback_position(),.6)
