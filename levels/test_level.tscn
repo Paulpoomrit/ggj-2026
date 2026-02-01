@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://b1xoobs8p1swo"]
+[gd_scene load_steps=9 format=4 uid="uid://b1xoobs8p1swo"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_x25rp"]
+[ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="3_w7r7j"]
+[ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="4_o6mel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_46lwt")
@@ -513,6 +515,23 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_x25rp")
 
+[sub_resource type="GDScript" id="GDScript_e7anx"]
+script/source = "extends VisibleOnScreenNotifier2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur00s"]
+size = Vector2(157.5, 156)
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -523,3 +542,21 @@ tile_set = SubResource("TileSet_gmgay")
 
 [node name="Player" parent="." instance=ExtResource("2_x25rp")]
 position = Vector2(201, 961)
+
+[node name="GroundEnemy" type="CharacterBody2D" parent="."]
+position = Vector2(863, -138)
+script = ExtResource("3_w7r7j")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="GroundEnemy"]
+position = Vector2(-127, -8)
+rect = Rect2(-10, -10, 158, 156)
+script = SubResource("GDScript_e7anx")
+
+[node name="Sprite2D" type="Sprite2D" parent="GroundEnemy"]
+position = Vector2(-58.49998, 60.000004)
+scale = Vector2(0.24843752, 0.24062505)
+texture = ExtResource("4_o6mel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundEnemy"]
+position = Vector2(-57.75, 60)
+shape = SubResource("RectangleShape2D_ur00s")
