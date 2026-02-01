@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://b1pcykdp361ti"]
+[gd_scene format=4 uid="uid://b1pcykdp361ti"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_djtih"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_rp2j6"]
