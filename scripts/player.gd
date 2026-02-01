@@ -1,9 +1,17 @@
 extends CharacterBody2D
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player_sprite_node: AnimatedSprite2D = $AnimatedSprite2D/AnimatedSprite2D
+
+#var index: GameManager.GAME_STATE
 const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
+
+func _ready() -> void:
+	#GameManager.on_game_state_changed.connect(change_mood)
+	pass
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -13,7 +21,11 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		animated_sprite_2d.play("jump")
 		velocity.y = JUMP_VELOCITY
+		print("jump")
+		
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -22,9 +34,24 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("walk")
 		velocity.x = direction * SPEED
 		animated_sprite_2d.flip_h = direction < 0
+		player_sprite_node.flip_h = direction < 0 
+		if velocity.x < 0:
+			player_sprite_node.set_offset(Vector2(-270,0))
+		else:
+			player_sprite_node.set_offset(Vector2(+0,0))
 	else:
-		animated_sprite_2d.play("slow_down")
+		player_sprite_node.centered
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		#animated_sprite_2d.stop()
 
 	move_and_slide()
+
+
+func _on_item_ui_mask_changed(index: int) -> void:
+	match index:
+		0:
+			player_sprite_node.play("HAPPY")
+		1:
+			player_sprite_node.play("SAD")
+		2:
+			player_sprite_node.play("ANGRY")
