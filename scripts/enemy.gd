@@ -20,10 +20,13 @@ func handle_emotion_state_changed(state: GameManager.GAME_STATE) -> void:
 	match state:
 		GameManager.GAME_STATE.HAPPY:
 			current_mask = GameManager.GAME_STATE.HAPPY
+			print("Game State: ", GameManager.GAME_STATE.HAPPY)
 		GameManager.GAME_STATE.ANGRY:
 			current_mask = GameManager.GAME_STATE.ANGRY
+			print("Game State: ", GameManager.GAME_STATE.ANGRY)
 		GameManager.GAME_STATE.SAD:
 			current_mask = GameManager.GAME_STATE.SAD
+			print("Game State: ", GameManager.GAME_STATE.SAD)
 		_:
 			current_mask = GameManager.GAME_STATE.HAPPY
 
@@ -67,6 +70,7 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 		GameManager.GAME_STATE.SAD:
 			speed = 0
+			velocity = Vector2(0,0)
 		_:
 			if (position.x <= start_position - distance):
 				direction = 1
