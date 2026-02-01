@@ -51,20 +51,17 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(131, 129)
-
-[node name="Player" type="CharacterBody2D" unique_id=667449989]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1699982217]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, -203)
 zoom = Vector2(0.5, 0.5)
 
-[node name="ItemUI" parent="." unique_id=2101169002 instance=ExtResource("3_qhqgy")]
+[node name="ItemUI" parent="." instance=ExtResource("3_qhqgy")]
 anchors_preset = 0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -78,8 +75,8 @@ grow_vertical = 1
 size_flags_vertical = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -1.9999999)
-scale = Vector2(8, 3.8599997)
+position = Vector2(45, -1.9999999)
+scale = Vector2(3.99, 3.99)
 skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
 
@@ -89,3 +86,11 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"walk"
 frame_progress = 0.3683449
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(45, -1.9999999)
+scale = Vector2(6.01, 6.01)
+skew = 0.01570797
+shape = SubResource("CircleShape2D_qhqgy")
