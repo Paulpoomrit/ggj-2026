@@ -546,7 +546,7 @@ position = Vector2(0, -115)
 [node name="Player" parent="." instance=ExtResource("3_q6ciu")]
 position = Vector2(201, 961)
 
-[node name="Node2D" parent="." instance=ExtResource("5_y5xn8")]
+[node name="ExitBox" parent="." instance=ExtResource("5_y5xn8")]
 position = Vector2(56, -489)
 scale = Vector2(3, 1)
 level_to_load = ExtResource("6_t8sbe")
