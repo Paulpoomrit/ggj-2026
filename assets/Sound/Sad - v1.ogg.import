@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cq8qveq6v1kwn"
+path="res://.godot/imported/Sad - v1.ogg-d2eee8c04042faa5371a5f1ff0e7b4fa.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Sound/Sad - v1.ogg"
+dest_files=["res://.godot/imported/Sad - v1.ogg-d2eee8c04042faa5371a5f1ff0e7b4fa.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

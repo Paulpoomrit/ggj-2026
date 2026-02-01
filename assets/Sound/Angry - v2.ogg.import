@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ssovypc0qk15"
+path="res://.godot/imported/Angry - v2.ogg-1e1fa3022108093ae502200488654bcb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Sound/Angry - v2.ogg"
+dest_files=["res://.godot/imported/Angry - v2.ogg-1e1fa3022108093ae502200488654bcb.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
