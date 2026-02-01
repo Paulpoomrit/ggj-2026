@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_sprite_node: AnimatedSprite2D = $AnimatedSprite2D/AnimatedSprite2D
-
+@onready var area: Area2D = $Area2D
 #var index: GameManager.GAME_STATE
 const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
@@ -12,9 +12,23 @@ func _ready() -> void:
 	#GameManager.on_game_state_changed.connect(change_mood)
 	pass
 	
+@onready var item_ui: ItemUI = $ItemUI
+
+
+func handle_enemy_bouncing() -> void:
+
+	if velocity.y <= 0:
+		return
+
+	# if there are no enemies' areas overlapping with "area", there are no enemies that the player can bounce on
+	if area.has_overlapping_areas():
+		print("colliding")
+		velocity.y = JUMP_VELOCITY # make the player bounce upward
 
 
 func _physics_process(delta: float) -> void:
+	handle_enemy_bouncing()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -23,10 +37,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		animated_sprite_2d.play("jump")
 		velocity.y = JUMP_VELOCITY
-		print("jump")
-		
-
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")

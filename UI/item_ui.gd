@@ -11,9 +11,9 @@ signal mask_changed(index: int)
 @onready var item_container: Control = $ItemContainer
 
 var slots: Array[Control] = []
-var current_index: int = 1
-var target_index: int = 1
-var scroll_offset: float = 1.0
+var current_index: int = 0
+var target_index: int = 0
+var scroll_offset: float = 0.0
 var is_scrolling: bool = false
 
 func _ready() -> void:
@@ -45,21 +45,27 @@ func convert_index_game_state(index: int):
 			return null
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed:
+	if event is InputEventMouseButton and event.pressed:
+		match event.button_index:
+			MOUSE_BUTTON_WHEEL_UP:
+				scroll_previous()
+				get_viewport().set_input_as_handled()
+			MOUSE_BUTTON_WHEEL_DOWN:
+				scroll_next()
+				get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed:
 		match event.keycode:
 			KEY_LEFT:
 				scroll_previous()
-				#get_viewport().set_input_as_handled()
 			KEY_RIGHT:
 				scroll_next()
-				#get_viewport().set_input_as_handled()
-			KEY_ENTER:
-				mask_selected.emit(target_index)
-				print("Mask selected: ", target_index)
-				var game_state: GameManager.GAME_STATE = convert_index_game_state(target_index)
+	mask_selected.emit(target_index)
+	print("Mask selected: ", target_index)
+	var game_state: GameManager.GAME_STATE = convert_index_game_state(target_index)
 				
-				GameManager.on_game_state_changed.emit(game_state)
-				#get_viewport().set_input_as_handled()
+	GameManager.on_game_state_changed.emit(game_state)
+	#get_viewport().set_input_as_handled()
+	
 
 func _update_positions(immediate: bool) -> void:
 	if slots.size() < 1:

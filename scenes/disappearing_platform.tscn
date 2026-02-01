@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://crgofd1uegact"]
+[gd_scene load_steps=5 format=3 uid="uid://crgofd1uegact"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_jhwlc"]
+[ext_resource type="Script" uid="uid://dp1f8oqanltw6" path="res://scripts/disappearing_platform.gd" id="2_r6x7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_jhwlc")
@@ -515,3 +516,4 @@ sources/0 = SubResource("TileSetAtlasSource_x25rp")
 [node name="DisappearingPlatform" type="TileMapLayer"]
 scale = Vector2(2.4999995, 2.4999995)
 tile_set = SubResource("TileSet_gmgay")
+script = ExtResource("2_r6x7o")
