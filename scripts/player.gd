@@ -40,9 +40,11 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		animated_sprite_2d.play("walk")
 		velocity.x = direction * SPEED
-		animated_sprite_2d.flip_h = direction < 0
+		animated_sprite_2d.scale.x = 1
+		#animated_sprite_2d.flip_h = direction < 0
 	else:
 		animated_sprite_2d.play("slow_down")
+		animated_sprite_2d.scale.x = -1
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		#animated_sprite_2d.stop()
 
