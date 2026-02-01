@@ -15,12 +15,15 @@ run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
-[physics]
 [autoload]
 
 GameManager="*res://game-manager/game_manager.gd"
 
 [dotnet]
+
+3d/physics_engine="Jolt Physics"
+
+[physics]
 
 3d/physics_engine="Jolt Physics"
 

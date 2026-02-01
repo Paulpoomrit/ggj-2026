@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dvvg"]
 size = Vector2(127, 399)
 
-[node name="Node2D" type="RigidBody2D" unique_id=621335999]
+[node name="Rename" type="RigidBody2D" unique_id=621335999]
 gravity_scale = 0.0
 script = ExtResource("1_6e84v")
 
