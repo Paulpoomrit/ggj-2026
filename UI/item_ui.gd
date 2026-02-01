@@ -23,6 +23,7 @@ func _ready() -> void:
 	_update_positions(true)
 
 func _process(delta: float) -> void:
+	
 	if is_scrolling:
 		scroll_offset = lerp(scroll_offset, float(target_index), delta * scroll_speed)
 		if abs(scroll_offset - target_index) < 0.01:
@@ -32,18 +33,32 @@ func _process(delta: float) -> void:
 			mask_changed.emit(current_index)
 		_update_positions(false)
 
+func convert_index_game_state(index: int):
+	match index:
+		0:
+			return GameManager.GAME_STATE.HAPPY
+		1:
+			return GameManager.GAME_STATE.ANGRY
+		2:
+			return GameManager.GAME_STATE.SAD
+		_:
+			return null
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
-			KEY_UP:
+			KEY_LEFT:
 				scroll_previous()
 				#get_viewport().set_input_as_handled()
-			KEY_DOWN:
+			KEY_RIGHT:
 				scroll_next()
 				#get_viewport().set_input_as_handled()
-			KEY_SHIFT:
+			KEY_ENTER:
 				mask_selected.emit(current_index)
 				print("Mask selected: ", current_index)
+				var game_state: GameManager.GAME_STATE = convert_index_game_state(current_index)
+				
+				GameManager.on_game_state_changed.emit(game_state)
 				#get_viewport().set_input_as_handled()
 
 func _update_positions(immediate: bool) -> void:
@@ -67,7 +82,7 @@ func _update_positions(immediate: bool) -> void:
 		var target_y_offset: float = 0.0
 		
 		if dist < 0.5:
-			target_scale = 1.5
+			target_scale = 2.5
 			target_y_offset = -40.0
 		else:
 			target_scale = lerp(1.0, 0.7, clamp(dist / 2.0, 0.0, 1.0))
@@ -104,5 +119,5 @@ func scroll_previous() -> void:
 		target_index -= 1
 		is_scrolling = true
 
-func get_selected_index() -> int:
-	return current_index
+#func get_selected_index() -> int:
+	#return current_index
