@@ -57,21 +57,21 @@ position = Vector2(396.99997, 333)
 scale = Vector2(2.5742188, 0.31640637)
 texture = ExtResource("2_yqjtg")
 
-[node name="LandEnemy" type="CharacterBody2D" parent="." unique_id=2082988165]
+[node name="GroundEnemy" type="CharacterBody2D" parent="." unique_id=2082988165]
 position = Vector2(318, -138)
 script = ExtResource("3_lbhrr")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="LandEnemy" unique_id=2138466459]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="GroundEnemy" unique_id=2138466459]
 position = Vector2(-127, -8)
 rect = Rect2(-10, -10, 158, 156)
 script = SubResource("GDScript_lbhrr")
 
-[node name="Sprite2D" type="Sprite2D" parent="LandEnemy" unique_id=1229895370]
+[node name="Sprite2D" type="Sprite2D" parent="GroundEnemy" unique_id=1229895370]
 position = Vector2(-58.49998, 60.000004)
 scale = Vector2(0.24843752, 0.24062505)
 texture = ExtResource("3_lnu2h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LandEnemy" unique_id=908228525]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundEnemy" unique_id=908228525]
 position = Vector2(-57.75, 60)
 shape = SubResource("RectangleShape2D_iywne")
 
