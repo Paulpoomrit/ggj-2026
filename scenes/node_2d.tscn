@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c7eme558vq3y"]
+
+[ext_resource type="Script" uid="uid://bnj001oiosina" path="res://Gate.gd" id="1_6e84v"]
+[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://assets/icon.svg" id="2_4dvvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dvvg"]
+size = Vector2(127, 399)
+
+[node name="Node2D" type="RigidBody2D" unique_id=621335999]
+gravity_scale = 0.0
+script = ExtResource("1_6e84v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620302926]
+position = Vector2(495, 301)
+shape = SubResource("RectangleShape2D_4dvvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1055884325]
+position = Vector2(489, 298)
+scale = Vector2(1, 3.109375)
+texture = ExtResource("2_4dvvg")
+
+[node name="Timer" type="Timer" parent="." unique_id=904067541]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
