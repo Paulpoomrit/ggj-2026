@@ -1,24 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://beiv8spglpk43"]
+[gd_scene load_steps=6 format=3 uid="uid://beiv8spglpk43"]
 
 [ext_resource type="Script" uid="uid://bo3nss77scxpx" path="res://UI/item_ui.gd" id="1_8k1sx"]
-[ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="2_qyigm"]
-[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://assets/icon.svg" id="3_cfgno"]
-[ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="4_nmcp0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvbw6"]
-bg_color = Color(0.101960786, 0.101960786, 0.14901961, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[ext_resource type="Texture2D" uid="uid://c02slgnhx88pt" path="res://assets/ui/masks/1.png" id="2_qyigm"]
+[ext_resource type="Texture2D" uid="uid://ck2bx7v0o3tlt" path="res://assets/ui/masks/2.png" id="3_cfgno"]
+[ext_resource type="Texture2D" uid="uid://bcu7hpgny61rv" path="res://assets/ui/masks/3.png" id="4_nmcp0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k1sx"]
 bg_color = Color(0.6, 0.6, 0.6, 0.3647059)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
 shadow_color = Color(1, 1, 1, 1)
 shadow_size = 15
 
@@ -43,27 +35,25 @@ grow_vertical = 2
 
 [node name="Slot" type="Control" parent="ItemContainer"]
 anchors_preset = 0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
 pivot_offset = Vector2(32, 32)
-
-[node name="Background" type="Panel" parent="ItemContainer/Slot"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mvbw6")
 
 [node name="Glow" type="Panel" parent="ItemContainer/Slot"]
 modulate = Color(1, 1, 1, 0)
 show_behind_parent = true
-layout_mode = 0
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 72.0
-offset_bottom = 72.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8k1sx")
 
 [node name="TextureRect" type="TextureRect" parent="ItemContainer/Slot"]
@@ -79,27 +69,25 @@ stretch_mode = 5
 
 [node name="Slot2" type="Control" parent="ItemContainer"]
 anchors_preset = 0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
 pivot_offset = Vector2(32, 32)
-
-[node name="Background" type="Panel" parent="ItemContainer/Slot2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mvbw6")
 
 [node name="Glow" type="Panel" parent="ItemContainer/Slot2"]
 modulate = Color(1, 1, 1, 0)
 show_behind_parent = true
-layout_mode = 0
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 72.0
-offset_bottom = 72.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8k1sx")
 
 [node name="TextureRect" type="TextureRect" parent="ItemContainer/Slot2"]
@@ -115,27 +103,25 @@ stretch_mode = 5
 
 [node name="Slot3" type="Control" parent="ItemContainer"]
 anchors_preset = 0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
 pivot_offset = Vector2(32, 32)
-
-[node name="Background" type="Panel" parent="ItemContainer/Slot3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_mvbw6")
 
 [node name="Glow" type="Panel" parent="ItemContainer/Slot3"]
 modulate = Color(1, 1, 1, 0)
 show_behind_parent = true
-layout_mode = 0
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 72.0
-offset_bottom = 72.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8k1sx")
 
 [node name="TextureRect" type="TextureRect" parent="ItemContainer/Slot3"]

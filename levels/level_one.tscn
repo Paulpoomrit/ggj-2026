@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
 [ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="1_gmgay"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_x25rp"]
-[ext_resource type="PackedScene" uid="uid://rcchusq3cd27" path="res://scenes/ground_enemy.tscn" id="4_e7anx"]
+[ext_resource type="PackedScene" path="res://scenes/ground_enemy.tscn" id="4_e7anx"]
 [ext_resource type="PackedScene" uid="uid://bsuot5fath7hk" path="res://scenes/PressurePlate.tscn" id="5_ur00s"]
 [ext_resource type="PackedScene" uid="uid://c7eme558vq3y" path="res://scenes/Gate.tscn" id="6_wndkh"]
 
@@ -546,8 +546,9 @@ position = Vector2(518, 940)
 [node name="GroundEnemy2" parent="." instance=ExtResource("4_e7anx")]
 position = Vector2(2437, 938)
 
-[node name="PressurePlate" parent="." instance=ExtResource("5_ur00s")]
+[node name="PressurePlate" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_ur00s")]
 position = Vector2(3244, 402)
+target_object = NodePath("../Rename")
 
 [node name="Rename" parent="." instance=ExtResource("6_wndkh")]
 position = Vector2(3391, -41)
@@ -555,8 +556,9 @@ position = Vector2(3391, -41)
 [node name="Rename2" parent="." instance=ExtResource("6_wndkh")]
 position = Vector2(3870, -37)
 
-[node name="PressurePlate2" parent="." instance=ExtResource("5_ur00s")]
+[node name="PressurePlate2" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_ur00s")]
 position = Vector2(4684, 405)
+target_object = NodePath("../Rename2")
 
 [node name="GroundEnemy3" parent="." instance=ExtResource("4_e7anx")]
 position = Vector2(5445, 383)
