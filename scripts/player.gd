@@ -9,7 +9,7 @@ const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
 
 func _ready() -> void:
-	#GameManager.on_game_state_changed.connect(change_mood)
+	GameManager.on_game_state_changed.connect(change_mood)
 	pass
 	
 @onready var item_ui: ItemUI = $ItemUI
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = direction < 0
 		player_sprite_node.flip_h = direction < 0 
 		if velocity.x < 0:
-			player_sprite_node.set_offset(Vector2(-270,0))
+			player_sprite_node.set_offset(Vector2(-450,0))
 		else:
 			player_sprite_node.set_offset(Vector2(+0,0))
 	else:
@@ -65,3 +65,13 @@ func _on_item_ui_mask_changed(index: int) -> void:
 			player_sprite_node.play("SAD")
 		2:
 			player_sprite_node.play("ANGRY")
+
+func change_mood(emotion: GameManager.GAME_STATE):
+	match emotion:
+		GameManager.GAME_STATE.HAPPY:
+			player_sprite_node.play("HAPPY")
+		GameManager.GAME_STATE.SAD:
+			player_sprite_node.play("SAD")
+		GameManager.GAME_STATE.ANGRY:
+			player_sprite_node.play("ANGRY")
+	
