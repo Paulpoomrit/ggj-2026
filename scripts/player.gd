@@ -4,6 +4,12 @@ extends CharacterBody2D
 const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
 
+@onready var item_ui: ItemUI = $ItemUI
+
+var in_ui_mode = false
+
+func _ready() -> void:
+	item_ui.visible = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,3 +29,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func enable_switch_ui(should_enable: bool):
+	item_ui.visible = should_enable
+
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if Input.is_action_just_pressed("switch_mask") and not in_ui_mode:
+			enable_switch_ui(true)
+			in_ui_mode = true
+		elif Input.is_action_just_pressed("switch_mask") and in_ui_mode:
+			enable_switch_ui(false)
+			in_ui_mode = false

@@ -54,11 +54,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				scroll_next()
 				#get_viewport().set_input_as_handled()
 			KEY_ENTER:
-				mask_selected.emit(current_index)
+				mask_selected.emit(target_index)
 				print("Mask selected: ", current_index)
 				var game_state: GameManager.GAME_STATE = convert_index_game_state(current_index)
 				
-				GameManager.on_game_state_changed.emit(game_state)
+				GameManager.on_game_state_changed.emit(target_index)
 				#get_viewport().set_input_as_handled()
 
 func _update_positions(immediate: bool) -> void:
