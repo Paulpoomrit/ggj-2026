@@ -5,6 +5,11 @@ extends CharacterBody2D
 const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
 
+@onready var item_ui: ItemUI = $ItemUI
+
+
+func _ready() -> void:
+	pass
 
 func handle_enemy_bouncing() -> void:
 
