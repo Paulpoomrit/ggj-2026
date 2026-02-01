@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7eme558vq3y"]
+
+[ext_resource type="Script" uid="uid://bnj001oiosina" path="res://Gate.gd" id="1_6e84v"]
+[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://assets/icon.svg" id="2_4dvvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dvvg"]
+size = Vector2(127, 399)
+
+[node name="Rename" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_6e84v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(495, 301)
+shape = SubResource("RectangleShape2D_4dvvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(489, 298)
+scale = Vector2(1, 3.109375)
+texture = ExtResource("2_4dvvg")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

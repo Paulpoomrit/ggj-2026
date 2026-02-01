@@ -1,0 +1,45 @@
+[gd_scene load_steps=0 format=3 uid="uid://rcchusq3cd27"]
+
+[ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="1_a3meg"]
+[ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="2_t2poe"]
+
+[sub_resource type="GDScript" id="GDScript_lbhrr"]
+script/source = "extends VisibleOnScreenNotifier2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(157.5, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3meg"]
+size = Vector2(164, 159)
+
+[node name="GroundEnemy" type="CharacterBody2D" unique_id=706994007]
+script = ExtResource("1_a3meg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2042533747]
+position = Vector2(-70, -68)
+rect = Rect2(-10, -10, 158, 156)
+script = SubResource("GDScript_lbhrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=115100037]
+scale = Vector2(0.24843752, 0.24062505)
+texture = ExtResource("2_t2poe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1819458642]
+shape = SubResource("RectangleShape2D_iywne")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1128423560]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=662561932]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_a3meg")
