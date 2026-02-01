@@ -6,7 +6,7 @@ const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
 
 @onready var item_ui: ItemUI = $ItemUI
-
+@onready var area = $Area2D
 
 func _ready() -> void:
 	pass
