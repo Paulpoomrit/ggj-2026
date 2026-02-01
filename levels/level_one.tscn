@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_m04wh"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_x25rp"]
-[ext_resource type="PackedScene" uid="uid://rcchusq3cd27" path="res://scenes/ground_enemy.tscn" id="4_e7anx"]
+[ext_resource type="PackedScene" path="res://scenes/ground_enemy.tscn" id="4_e7anx"]
 [ext_resource type="PackedScene" uid="uid://bsuot5fath7hk" path="res://scenes/PressurePlate.tscn" id="5_ur00s"]
 [ext_resource type="PackedScene" path="res://scenes/Gate.tscn" id="6_wndkh"]
 
@@ -542,6 +542,7 @@ position = Vector2(2437, 938)
 
 [node name="PressurePlate" parent="." unique_id=1060916212 instance=ExtResource("5_ur00s")]
 position = Vector2(3244, 402)
+target_object = NodePath("../Rename")
 
 [node name="Rename" parent="." unique_id=1506032322 instance=ExtResource("6_wndkh")]
 position = Vector2(3391, -41)
@@ -551,6 +552,7 @@ position = Vector2(3870, -37)
 
 [node name="PressurePlate2" parent="." unique_id=1347182931 instance=ExtResource("5_ur00s")]
 position = Vector2(4684, 405)
+target_object = NodePath("../Rename2")
 
 [node name="GroundEnemy3" parent="." unique_id=1889721906 instance=ExtResource("4_e7anx")]
 position = Vector2(5445, 383)

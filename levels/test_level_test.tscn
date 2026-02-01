@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://j1ku45wdb6uo"]
+[gd_scene load_steps=0 format=4 uid="uid://j1ku45wdb6uo"]
 
 [ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="1_hj4ew"]
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="2_0nwul"]
