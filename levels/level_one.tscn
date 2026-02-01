@@ -519,7 +519,7 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_x25rp")
 
-[node name="TestLevel" type="Node2D"]
+[node name="TestLevel2" type="Node2D"]
 
 [node name="BackgroundPaper" parent="." instance=ExtResource("1_m04wh")]
 
@@ -536,17 +536,19 @@ position = Vector2(931, 940)
 [node name="GroundEnemy2" parent="." instance=ExtResource("4_e7anx")]
 position = Vector2(2437, 938)
 
-[node name="PressurePlate" parent="." instance=ExtResource("5_ur00s")]
+[node name="PressurePlate" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_ur00s")]
 position = Vector2(3244, 402)
+target_object = NodePath("../DoorPlayerSide")
 
-[node name="Rename" parent="." instance=ExtResource("6_wndkh")]
+[node name="DoorPlayerSide" parent="." instance=ExtResource("6_wndkh")]
 position = Vector2(3391, -41)
 
-[node name="Rename2" parent="." instance=ExtResource("6_wndkh")]
+[node name="DoorEnemySide" parent="." instance=ExtResource("6_wndkh")]
 position = Vector2(3870, -37)
 
-[node name="PressurePlate2" parent="." instance=ExtResource("5_ur00s")]
+[node name="PressurePlate2" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_ur00s")]
 position = Vector2(4684, 405)
+target_object = NodePath("../DoorEnemySide")
 
 [node name="GroundEnemy3" parent="." instance=ExtResource("4_e7anx")]
 position = Vector2(5445, 383)

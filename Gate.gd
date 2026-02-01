@@ -36,12 +36,14 @@ func _move():
 			
 
 func on_pressure_plate_changed(is_enable: bool, target_platoform: Node) -> void:
-	if is_enable:
-		should_move = true
-		direction = true
-		timer.start()
-	else:
-		should_move = true
-		direction = false
-		timer.start()
-	_move()
+	if target_platoform == self:
+		if is_enable:
+			should_move = true
+			direction = true
+			timer.start()
+		else:
+			should_move = true
+			direction = false
+			timer.start()
+		_move()
+	return
