@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 const SPEED = 600.0
 const JUMP_VELOCITY = -700.0
+const collision_right_x = 45
+const collision_left_x = -45
 
 @onready var item_ui: ItemUI = $ItemUI
 @onready var area = $Area2D
@@ -37,15 +40,20 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		animated_sprite_2d.play("walk")
-		velocity.x = direction * SPEED
-		animated_sprite_2d.scale.x = 1
-		#animated_sprite_2d.flip_h = direction < 0
-	else:
+	print(direction)
+	if direction == 0:
 		animated_sprite_2d.play("slow_down")
-		animated_sprite_2d.scale.x = -1
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		#animated_sprite_2d.stop()
+		collision_shape_2d.position.x = collision_right_x
+		
+	else:
+		animated_sprite_2d.play("walk")
+		velocity.x = direction * SPEED
+		animated_sprite_2d.flip_h = direction < 0
+		if direction == -1:
+			collision_shape_2d.position.x = collision_left_x
+		else: 
+			collision_shape_2d.position.x = collision_right_x
 
 	move_and_slide()
