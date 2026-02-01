@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var player = get_node("../Player")
 @onready var vis = $VisibleOnScreenNotifier2D
 const ENEMY_SPEED = 100
 
@@ -36,13 +37,11 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() && motion_mode == MOTION_MODE_GROUNDED:
 		velocity += get_gravity() * delta
 	
-	var collision_info = move_and_collide(velocity * delta)
-	if collision_info:
-		speed = 0
-	
 	match current_mask:
 		GameManager.GAME_STATE.HAPPY:
-			var player = get_node("../Player")
+			if player == null:
+				return
+				
 			var player_radius = player.get_node("CollisionShape2D").shape.radius
 			var player_pos_x = player.position.x + player_radius
 
@@ -55,7 +54,9 @@ func _physics_process(delta: float) -> void:
 			velocity.x = speed * direction
 			move_and_slide()
 		GameManager.GAME_STATE.ANGRY:
-			var player = get_node("../Player")
+			if player == null:
+				return
+			
 			var player_radius = player.get_node("CollisionShape2D").shape.radius
 			
 			var player_pos_x = player.position.x + player_radius
