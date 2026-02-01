@@ -54,9 +54,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				scroll_next()
 				#get_viewport().set_input_as_handled()
 			KEY_ENTER:
-				mask_selected.emit(current_index)
-				print("Mask selected: ", current_index)
-				var game_state: GameManager.GAME_STATE = convert_index_game_state(current_index)
+				mask_selected.emit(target_index)
+				print("Mask selected: ", target_index)
+				var game_state: GameManager.GAME_STATE = convert_index_game_state(target_index)
 				
 				GameManager.on_game_state_changed.emit(game_state)
 				#get_viewport().set_input_as_handled()
