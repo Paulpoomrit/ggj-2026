@@ -33,6 +33,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() && motion_mode == MOTION_MODE_GROUNDED:
 		velocity += get_gravity() * delta
 	
+	var collision_info = move_and_collide(velocity * delta)
+	if collision_info:
+		speed = 0
+	
 	match current_mask:
 		GameManager.GAME_STATE.HAPPY:
 			var player = get_node("../Player")
@@ -68,7 +72,6 @@ func _physics_process(delta: float) -> void:
 				direction = 1
 			if (position.x >= start_position + distance):
 				direction = -1
-			
 			
 			
 	
