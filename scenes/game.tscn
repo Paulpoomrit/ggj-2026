@@ -1,6 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://y7e82b4undpw"]
 
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://assets/icon.svg" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="3_lnu2h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -16,3 +19,57 @@ position = Vector2(0, 179)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1465565139]
+position = Vector2(6.5, 92.5)
+scale = Vector2(9.8359375, 1.4296875)
+texture = ExtResource("2_yqjtg")
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1730122144]
+position = Vector2(-81, -312)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1163965323]
+position = Vector2(396.5, 333)
+shape = SubResource("RectangleShape2D_yqjtg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform" unique_id=227688450]
+position = Vector2(396.99997, 333)
+scale = Vector2(2.5742188, 0.31640637)
+texture = ExtResource("2_yqjtg")
+
+[node name="GroundEnemy" type="CharacterBody2D" parent="." unique_id=2082988165]
+position = Vector2(318, -138)
+script = ExtResource("3_lbhrr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="GroundEnemy" unique_id=2138466459]
+position = Vector2(-127, -8)
+rect = Rect2(-10, -10, 158, 156)
+script = SubResource("GDScript_lbhrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="GroundEnemy" unique_id=1229895370]
+position = Vector2(-58.49998, 60.000004)
+scale = Vector2(0.24843752, 0.24062505)
+texture = ExtResource("3_lnu2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundEnemy" unique_id=908228525]
+position = Vector2(-57.75, 60)
+shape = SubResource("RectangleShape2D_iywne")
+
+[node name="FloatingEnemy" type="CharacterBody2D" parent="." unique_id=1553586663]
+position = Vector2(-250, -272)
+motion_mode = 1
+script = ExtResource("3_lbhrr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="FloatingEnemy" unique_id=832509728]
+position = Vector2(-127, -8)
+rect = Rect2(-10, -10, 158, 156)
+script = SubResource("GDScript_lbhrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="FloatingEnemy" unique_id=801212767]
+position = Vector2(-58.49998, 60.000004)
+scale = Vector2(0.24843752, 0.24062505)
+texture = ExtResource("3_lnu2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloatingEnemy" unique_id=986976467]
+position = Vector2(-57.75, 60)
+shape = SubResource("RectangleShape2D_iywne")
