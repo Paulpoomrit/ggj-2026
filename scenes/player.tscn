@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bsfa1tlsh7fwr"]
+[gd_scene load_steps=22 format=3 uid="uid://bsfa1tlsh7fwr"]
 
 [ext_resource type="Script" uid="uid://bdf8a0uau7y2d" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dqrvbvkfvxwhw" path="res://assets/ui/Mask_select_bg.png" id="3_3v2ag"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cblcb0jqacdbl" path="res://assets/Player/protag_run0006.png" id="8_oprun"]
 [ext_resource type="Texture2D" uid="uid://fkkxmoqna3jv" path="res://assets/Player/protag_run0007.png" id="9_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://cknpb5jh7d4xe" path="res://assets/Player/protag_run0008.png" id="10_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://b6n1x25a4avl0" path="res://assets/Moods/IMG_3532.PNG" id="13_oprun"]
+[ext_resource type="Texture2D" uid="uid://bgtk02mbrxyjc" path="res://assets/Moods/IMG_3530.PNG" id="14_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://cr8ffjt2uowux" path="res://assets/Moods/IMG_3531.PNG" id="15_qfm1y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 15.462788
@@ -51,6 +54,45 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
+atlas = ExtResource("13_oprun")
+region = Rect2(289, 261, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("14_a8ls1")
+region = Rect2(289, 261, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
+atlas = ExtResource("15_qfm1y")
+region = Rect2(289, 261, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4ail"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fulsm")
+}],
+"loop": true,
+"name": &"ANGRY",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}],
+"loop": true,
+"name": &"HAPPY",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60mlk")
+}],
+"loop": true,
+"name": &"SAD",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -101,6 +143,12 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"walk"
 frame_progress = 0.3683449
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+position = Vector2(114.66667, 40)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_i4ail")
+animation = &"ANGRY"
 
 [node name="Area2D" type="Area2D" parent="."]
 
