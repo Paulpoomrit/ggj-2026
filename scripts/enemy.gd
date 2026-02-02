@@ -5,7 +5,11 @@ extends CharacterBody2D
 @onready var sound = $AudioStreamPlayer2D
 const ENEMY_SPEED = 100
 
-var direction = 1
+var direction = 1:
+	set(value):
+		if motion_mode == MOTION_MODE_GROUNDED:
+			$Sprite2D.flip_h = value > 0
+		direction = value
 var speed = 0
 var start_position = position.x
 
@@ -15,7 +19,10 @@ var current_mask = GameManager.GAME_STATE.HAPPY
 
 func _ready() -> void:
 	GameManager.on_game_state_changed.connect(handle_emotion_state_changed)
+	timer.timeout.connect(hide_poof)
 	
+
+
 func handle_emotion_state_changed(state: GameManager.GAME_STATE) -> void:
 	print(state)
 	## do stuff
@@ -78,11 +85,8 @@ func _physics_process(delta: float) -> void:
 				direction = 1
 			if (position.x >= start_position + distance):
 				direction = -1
-			
-			
-	
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if motion_mode == MOTION_MODE_GROUNDED && area.get_parent().name == "Player":
+	if motion_mode == MOTION_MODE_GROUNDED:
 		sound.play()
