@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bsfa1tlsh7fwr"]
 
 [ext_resource type="Script" uid="uid://bdf8a0uau7y2d" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://df4aoe7wr1021" path="res://assets/background_curtains.PNG" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://c7v6bqw8me5ne" path="res://assets/ui/Curtain 2 in.png" id="2_oprun"]
+[ext_resource type="Texture2D" uid="uid://dqrvbvkfvxwhw" path="res://assets/ui/Mask_select_bg.png" id="3_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://beiv8spglpk43" path="res://UI/item_ui.tscn" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bx6tspcfne77u" path="res://assets/Player/protag_run0001.png" id="3_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://28y6hjoq5aju" path="res://assets/Player/protag_run0002.png" id="4_d2wvv"]
@@ -11,9 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://cblcb0jqacdbl" path="res://assets/Player/protag_run0006.png" id="8_oprun"]
 [ext_resource type="Texture2D" uid="uid://fkkxmoqna3jv" path="res://assets/Player/protag_run0007.png" id="9_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://cknpb5jh7d4xe" path="res://assets/Player/protag_run0008.png" id="10_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://b6n1x25a4avl0" path="res://assets/Moods/IMG_3532.PNG" id="13_oprun"]
+[ext_resource type="Texture2D" uid="uid://bgtk02mbrxyjc" path="res://assets/Moods/IMG_3530.PNG" id="14_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://cr8ffjt2uowux" path="res://assets/Moods/IMG_3531.PNG" id="15_qfm1y"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
-radius = 15.462788
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oprun"]
+size = Vector2(51.15709, 86.009995)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -52,51 +56,110 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1397412567]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
+atlas = ExtResource("13_oprun")
+region = Rect2(289, 261, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("14_a8ls1")
+region = Rect2(289, 261, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
+atlas = ExtResource("15_qfm1y")
+region = Rect2(289, 261, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4ail"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fulsm")
+}],
+"loop": true,
+"name": &"ANGRY",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}],
+"loop": true,
+"name": &"HAPPY",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60mlk")
+}],
+"loop": true,
+"name": &"SAD",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 35.78881
+
+[node name="Player" type="CharacterBody2D" unique_id=1963818295]
 collision_layer = 0
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1179059337]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(9, -448)
+zoom = Vector2(0.25, 0.25)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1661857825]
-position = Vector2(9, -203)
-zoom = Vector2(0.5, 0.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=252382167]
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=403133649]
 position = Vector2(-0.888916, 0.5000458)
-scale = Vector2(0.5995371, 0.5995371)
-texture = ExtResource("3_dqkch")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_oprun")
 
-[node name="ItemUI" parent="." unique_id=1797939479 instance=ExtResource("3_qhqgy")]
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+offset_left = -2314.0
+offset_top = 252.0
+offset_right = -1223.0
+offset_bottom = 1111.0
+scale = Vector2(1.21, 1.21)
+texture = ExtResource("3_3v2ag")
+
+[node name="ItemUI" parent="." unique_id=1139824413 instance=ExtResource("3_qhqgy")]
 anchors_preset = 0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -1091.0
-offset_top = 221.0
-offset_right = -792.5
-offset_bottom = 423.0
+offset_left = -2152.0
+offset_top = 302.0
+offset_right = -1853.5
+offset_bottom = 504.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(2.25, 2.25)
 size_flags_vertical = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2018622725]
-position = Vector2(45, -1.9999999)
-scale = Vector2(3.99, 3.99)
-skew = 0.01570797
-shape = SubResource("CircleShape2D_qhqgy")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1641785655]
+position = Vector2(-7.541744, -26.999388)
+scale = Vector2(5, 1.9999996)
+shape = SubResource("RectangleShape2D_oprun")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1321748235]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2105256987]
 position = Vector2(-8, -41)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"walk"
 frame_progress = 0.3683449
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2030498301]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=1966117057]
+visible = false
+position = Vector2(114.66667, 40)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_i4ail")
+animation = &"ANGRY"
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1407962076]
+[node name="Area2D" type="Area2D" parent="." unique_id=1009667324]
+visible = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=96180211]
+visible = false
 position = Vector2(45, -1.9999999)
 scale = Vector2(6.01, 6.01)
 skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=458638006]

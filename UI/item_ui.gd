@@ -62,7 +62,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	mask_selected.emit(target_index)
 	print("Mask selected: ", target_index)
 	var game_state: GameManager.GAME_STATE = convert_index_game_state(target_index)
-				
+	
 	GameManager.on_game_state_changed.emit(game_state)
 	#get_viewport().set_input_as_handled()
 	
@@ -119,11 +119,13 @@ func scroll_next() -> void:
 	if target_index < slots.size() - 1:
 		target_index += 1
 		is_scrolling = true
+		SfxManager.play_click_sfx($AudioStreamPlayer)
 
 func scroll_previous() -> void:
 	if target_index > 0:
 		target_index -= 1
 		is_scrolling = true
+		SfxManager.play_click_sfx($AudioStreamPlayer)
 
 #func get_selected_index() -> int:
 	#return current_index

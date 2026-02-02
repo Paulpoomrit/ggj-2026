@@ -1,11 +1,11 @@
-[gd_scene load_steps=0 format=3 uid="uid://c0ibj22fk7wpm"]
+[gd_scene load_steps=2 format=3 uid="uid://c0ibj22fk7wpm"]
 
-[ext_resource type="Texture2D" uid="uid://pt3nb5ifqwia" path="res://assets/background_paper.PNG" id="1_q44ih"]
+[ext_resource type="Texture2D" uid="uid://byhjd1x4femtq" path="res://assets/ui/Paper2_.png" id="1_q44ih"]
 
-[node name="BackgroundPaper" type="CanvasLayer" unique_id=1925208301]
+[node name="BackgroundPaper" type="CanvasLayer"]
 layer = -1
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1996841173]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(201, 657)
 scale = Vector2(0.5921296, 0.5921296)
 texture = ExtResource("1_q44ih")

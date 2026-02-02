@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cejwkeymui0dt"]
+
+[ext_resource type="Shader" uid="uid://wifeahkl2e8f" path="res://shaders/mask_ui.gdshader" id="1_taygo"]
+
+[resource]
+shader = ExtResource("1_taygo")
+shader_parameter/_VertexAnimation = true
+shader_parameter/_VertexScale = 0.0999999977648
+shader_parameter/_VertexSpeed = 2.0000000149012003
+shader_parameter/_SpecularSpeed = 0.5
+shader_parameter/_SpecularColor = Color(0.69803923, 0.43137255, 0.7490196, 1)
