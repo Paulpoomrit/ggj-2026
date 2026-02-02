@@ -3,7 +3,6 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-# @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_sprite_node: AnimatedSprite2D = $AnimatedSprite2D/AnimatedSprite2D
 @onready var area: Area2D = $Area2D
 #var index: GameManager.GAME_STATE
@@ -49,18 +48,19 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("walk")
 		velocity.x = direction * SPEED
 		animated_sprite_2d.scale.x = 1
-		#animated_sprite_2d.flip_h = direction < 0
+
 		animated_sprite_2d.flip_h = direction < 0
 		player_sprite_node.flip_h = direction < 0 
 		if velocity.x < 0:
 			player_sprite_node.set_offset(Vector2(-450,0))
 		else:
 			player_sprite_node.set_offset(Vector2(+0,0))
-	else:
+			
+	elif direction == 0:
 		animated_sprite_2d.play("slow_down")
 		animated_sprite_2d.scale.x = -1
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		#animated_sprite_2d.stop()
+		
 
 	move_and_slide()
 
