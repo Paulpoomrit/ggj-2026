@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dsl75mupnjjt2"
+path="res://.godot/imported/MouseClick 1.ogg-b4293315893a38846a15e49ddca464b0.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Sound/MouseClick 1.ogg"
+dest_files=["res://.godot/imported/MouseClick 1.ogg-b4293315893a38846a15e49ddca464b0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

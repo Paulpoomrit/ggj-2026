@@ -1,7 +1,8 @@
-[gd_scene load_steps=0 format=3 uid="uid://rcchusq3cd27"]
+[gd_scene load_steps=7 format=3 uid="uid://rcchusq3cd27"]
 
 [ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="1_a3meg"]
-[ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="2_t2poe"]
+[ext_resource type="Texture2D" uid="uid://5oop1bbd4dqd" path="res://assets/sprites/Orchestra/Orchestra.PNG" id="2_t2poe"]
+[ext_resource type="AudioStream" uid="uid://djmx03i5n8sf4" path="res://assets/Sound/Tuba bounce 1.ogg" id="3_t2poe"]
 
 [sub_resource type="GDScript" id="GDScript_lbhrr"]
 script/source = "extends VisibleOnScreenNotifier2D
@@ -18,28 +19,34 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(157.5, 156)
+size = Vector2(157.5, 105)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3meg"]
-size = Vector2(164, 159)
+size = Vector2(178, 109)
 
-[node name="GroundEnemy" type="CharacterBody2D" unique_id=706994007]
+[node name="GroundEnemy" type="CharacterBody2D"]
 script = ExtResource("1_a3meg")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2042533747]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-70, -68)
-rect = Rect2(-10, -10, 158, 156)
+rect = Rect2(-10, 19, 158, 127)
 script = SubResource("GDScript_lbhrr")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=115100037]
-scale = Vector2(0.24843752, 0.24062505)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.291)
 texture = ExtResource("2_t2poe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1819458642]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25.5)
 shape = SubResource("RectangleShape2D_iywne")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1128423560]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=662561932]
-position = Vector2(0, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 25.5)
 shape = SubResource("RectangleShape2D_a3meg")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_t2poe")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

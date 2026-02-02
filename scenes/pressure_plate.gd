@@ -2,7 +2,7 @@ extends Area2D
 
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-
+@onready var sound : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var target_object: Node = null
 
@@ -23,11 +23,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	is_enable = true
+	sound.play()
 	if target_object:
 		GameManager.on_pressure_plate_state_changed.emit(is_enable, target_object)
 
 
 func _on_body_exited(body: Node2D) -> void:
 	is_enable = false
+	sound.play()
 	if target_object:
 		GameManager.on_pressure_plate_state_changed.emit(is_enable, target_object)
