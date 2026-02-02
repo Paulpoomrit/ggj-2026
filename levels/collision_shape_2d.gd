@@ -1,4 +1,4 @@
-extends CollisionShape2D
+extends Area2D
 
 @export var level : Resource
 

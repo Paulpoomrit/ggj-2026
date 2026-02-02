@@ -19,7 +19,6 @@ var current_mask = GameManager.GAME_STATE.HAPPY
 
 func _ready() -> void:
 	GameManager.on_game_state_changed.connect(handle_emotion_state_changed)
-	timer.timeout.connect(hide_poof)
 	
 
 

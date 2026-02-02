@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://bc0iahe7g074w"]
+[gd_scene load_steps=8 format=4 uid="uid://bc0iahe7g074w"]
 
-[ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="1_t8sbe"]
+[ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_y5xn8"]
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="2_xw12x"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="3_q6ciu"]
 [ext_resource type="PackedScene" uid="uid://5pxmwwiwq8xn" path="res://scenes/floating_enemy.tscn" id="4_bvjaj"]
-[ext_resource type="PackedScene" uid="uid://cswh721hx7yfx" path="res://scenes/Exit.tscn" id="4_xw12x"]
-[ext_resource type="PackedScene" uid="uid://brhxug8pmagid" path="res://levels/level_one.tscn" id="5_q6ciu"]
 [ext_resource type="PackedScene" uid="uid://c8k6kv2h75xam" path="res://UI/pause_menu.tscn" id="5_y5xn8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
@@ -520,13 +518,7 @@ sources/0 = SubResource("TileSetAtlasSource_x25rp")
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="Background" type="Parallax2D" parent="."]
-
-[node name="test-background" type="Sprite2D" parent="Background"]
-visible = false
-position = Vector2(3438.5, 341.00003)
-scale = Vector2(12.3515625, 3.3406248)
-texture = ExtResource("1_t8sbe")
+[node name="BackgroundPaper" parent="." instance=ExtResource("1_y5xn8")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 modulate = Color(0.4502378, 0.37925428, 0.48845974, 1)
@@ -539,18 +531,16 @@ tile_set = SubResource("TileSet_gmgay")
 position = Vector2(924, 604)
 
 [node name="FloatingEnemy2" parent="." instance=ExtResource("4_bvjaj")]
-position = Vector2(1348, 80)
+position = Vector2(1342, 92)
+
+[node name="FloatingEnemy4" parent="." instance=ExtResource("4_bvjaj")]
+position = Vector2(1342, 92)
 
 [node name="FloatingEnemy3" parent="." instance=ExtResource("4_bvjaj")]
-position = Vector2(0, -115)
-
-[node name="Area2D" parent="." instance=ExtResource("4_xw12x")]
-position = Vector2(-130, -662)
-level = ExtResource("5_q6ciu")
+position = Vector2(2, -153)
 
 [node name="Player" parent="." instance=ExtResource("3_q6ciu")]
-visible = false
-position = Vector2(201, 961)
+position = Vector2(607, 959)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

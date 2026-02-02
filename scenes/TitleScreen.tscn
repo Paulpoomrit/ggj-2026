@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfk85r22a0f84"]
+
+[ext_resource type="Script" uid="uid://c4ekh80ayvgqn" path="res://scenes/title_screen.gd" id="1_ch40n"]
+[ext_resource type="Texture2D" uid="uid://dt3afqp52kc5h" path="res://UI/FINALSPLASHSCREEN.PNG" id="1_qyuap"]
+[ext_resource type="PackedScene" uid="uid://brhxug8pmagid" path="res://UI/level_one.tscn" id="2_dfj8j"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ch40n")
+level = ExtResource("2_dfj8j")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qyuap")
