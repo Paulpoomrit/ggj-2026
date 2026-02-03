@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4ekh80ayvgqn" path="res://scenes/title_screen.gd" id="1_ch40n"]
 [ext_resource type="Texture2D" uid="uid://dt3afqp52kc5h" path="res://UI/FINALSPLASHSCREEN.PNG" id="1_qyuap"]
-[ext_resource type="PackedScene" uid="uid://brhxug8pmagid" path="res://UI/level_one.tscn" id="2_dfj8j"]
+[ext_resource type="PackedScene" uid="uid://brhxug8pmagid" path="res://levels/level_one.tscn" id="2_dfj8j"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
