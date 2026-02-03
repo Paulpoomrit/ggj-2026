@@ -15,4 +15,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	print(body.name)
+	if target_object == null:
+		return
 	target_object.on_pressure_plate_changed(true, target_object)

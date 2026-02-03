@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://brhxug8pmagid"]
+[gd_scene load_steps=12 format=4 uid="uid://brhxug8pmagid"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_m04wh"]
@@ -7,9 +7,8 @@
 [ext_resource type="Script" uid="uid://dhmoj785ar58k" path="res://scenes/pressure_plate_gate.gd" id="5_jj3p3"]
 [ext_resource type="PackedScene" uid="uid://bsuot5fath7hk" path="res://scenes/PressurePlate.tscn" id="5_ur00s"]
 [ext_resource type="PackedScene" uid="uid://c7eme558vq3y" path="res://scenes/Gate.tscn" id="6_wndkh"]
-[ext_resource type="PackedScene" uid="uid://cswh721hx7yfx" path="res://scenes/Exit.tscn" id="7_7qlxi"]
 [ext_resource type="PackedScene" uid="uid://c8k6kv2h75xam" path="res://UI/pause_menu.tscn" id="7_hu4x8"]
-[ext_resource type="PackedScene" uid="uid://b1pcykdp361ti" path="res://levels/level_two.tscn" id="8_n054k"]
+[ext_resource type="PackedScene" uid="uid://cswh721hx7yfx" path="res://scenes/Exit.tscn" id="9_moue2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_46lwt")
@@ -533,7 +532,8 @@ tile_map_data = PackedByteArray("AAAAABAAAAABAAAAAAABABAAAAABAAAAAAACABAAAAABAAA
 tile_set = SubResource("TileSet_gmgay")
 
 [node name="GroundEnemy" parent="." instance=ExtResource("4_e7anx")]
-position = Vector2(931, 940)
+position = Vector2(896.00006, 840)
+scale = Vector2(2.5, 2.5)
 
 [node name="GroundEnemy2" parent="." instance=ExtResource("4_e7anx")]
 position = Vector2(2437, 938)
@@ -549,14 +549,14 @@ target_object = NodePath("../EnemySideDoor")
 [node name="GroundEnemy3" parent="." instance=ExtResource("4_e7anx")]
 position = Vector2(6021, 379)
 
-[node name="Area2D" parent="." instance=ExtResource("7_7qlxi")]
-position = Vector2(6170, 226)
-level = ExtResource("8_n054k")
-
 [node name="Player" parent="." instance=ExtResource("2_x25rp")]
-position = Vector2(403, 958)
+position = Vector2(398, 956)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_hu4x8")]
 metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" parent="." instance=ExtResource("9_moue2")]
+position = Vector2(6168, 214)
+level = 1

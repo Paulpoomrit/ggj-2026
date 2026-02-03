@@ -1,7 +1,21 @@
-[gd_scene load_steps=0 format=3 uid="uid://5pxmwwiwq8xn"]
+[gd_scene load_steps=15 format=3 uid="uid://5pxmwwiwq8xn"]
 
 [ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="1_t3rxf"]
-[ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="2_myl57"]
+[ext_resource type="Texture2D" uid="uid://d2ubvqwwcaaq3" path="res://assets/sprites/Tech/AnimFrames/G01.PNG" id="2_pxbhx"]
+[ext_resource type="Texture2D" uid="uid://caohj6g0fpy6j" path="res://assets/sprites/Tech/AnimFrames/G02.PNG" id="3_25hhc"]
+[ext_resource type="AudioStream" uid="uid://iy1a465sl0ft" path="res://assets/Sound/Cog Loop.ogg" id="3_myl57"]
+[ext_resource type="Texture2D" uid="uid://myh8dv4luv1a" path="res://assets/sprites/Tech/AnimFrames/G03.PNG" id="4_dwxba"]
+[ext_resource type="Texture2D" uid="uid://cgs0t5sle2mg" path="res://assets/sprites/Tech/AnimFrames/G04.PNG" id="5_bsr77"]
+[ext_resource type="Texture2D" uid="uid://cmeplgvwjcmds" path="res://assets/sprites/Tech/AnimFrames/G05.PNG" id="6_566ts"]
+[ext_resource type="Texture2D" uid="uid://bqjjbse7vfa0y" path="res://assets/sprites/Tech/AnimFrames/G06.PNG" id="7_8q7kt"]
+[ext_resource type="Texture2D" uid="uid://b3jin4vhb7gy" path="res://assets/sprites/Tech/IMG_3584.PNG" id="8_bsr77"]
+[ext_resource type="Texture2D" uid="uid://bijjn080yurhh" path="res://assets/sprites/Tech/IMG_3582.PNG" id="10_566ts"]
+[ext_resource type="Texture2D" uid="uid://bvaf7n2mcd4ya" path="res://assets/sprites/Tech/IMG_3583.PNG" id="11_8q7kt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsr77"]
+custom_solver_bias = 0.314
+radius = 13.0
+height = 148.12
 
 [sub_resource type="GDScript" id="GDScript_lbhrr"]
 script/source = "extends VisibleOnScreenNotifier2D
@@ -17,30 +31,67 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(157.5, 156)
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wwej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pxbhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25hhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dwxba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bsr77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_566ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8q7kt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3rxf"]
-size = Vector2(162, 159)
-
-[node name="FloatingEnemy" type="CharacterBody2D" unique_id=1022091721]
+[node name="FloatingEnemy" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 motion_mode = 1
 script = ExtResource("1_t3rxf")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=665867462]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.25, -11.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_bsr77")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-69, -69)
-rect = Rect2(-10, -10, 158, 156)
+rect = Rect2(19, 34, 112, 58)
 script = SubResource("GDScript_lbhrr")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=562955770]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.24843752, 0.24062505)
-texture = ExtResource("2_myl57")
+sprite_frames = SubResource("SpriteFrames_4wwej")
+autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353597760]
-shape = SubResource("RectangleShape2D_iywne")
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.235, 0.235)
+texture = ExtResource("8_bsr77")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=537964519]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_myl57")
+volume_db = -10.0
+autoplay = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1242512980]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_t3rxf")
+[node name="PlatformHolder" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformHolder"]
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("10_566ts")
+
+[node name="Sprite2D2" type="Sprite2D" parent="PlatformHolder"]
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("11_8q7kt")

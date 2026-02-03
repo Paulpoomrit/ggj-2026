@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://iy1a465sl0ft"
+path="res://.godot/imported/Cog Loop.ogg-288ccbd50af521a479d690889397cfda.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Sound/Cog Loop.ogg"
+dest_files=["res://.godot/imported/Cog Loop.ogg-288ccbd50af521a479d690889397cfda.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

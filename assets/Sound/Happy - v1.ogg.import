@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cakptf2i0toyp"
+path="res://.godot/imported/Happy - v1.ogg-dafaeabc2e3e4569197dd789bb5be3c9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Sound/Happy - v1.ogg"
+dest_files=["res://.godot/imported/Happy - v1.ogg-dafaeabc2e3e4569197dd789bb5be3c9.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

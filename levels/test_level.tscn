@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="1_gmgay"]
 [ext_resource type="Texture2D" uid="uid://pt3nb5ifqwia" path="res://assets/background_paper.PNG" id="1_o6mel"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_x25rp"]
-[ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="4_w7r7j"]
+[ext_resource type="PackedScene" uid="uid://5pxmwwiwq8xn" path="res://scenes/floating_enemy.tscn" id="7_wndkh"]
+[ext_resource type="PackedScene" uid="uid://rcchusq3cd27" path="res://scenes/ground_enemy.tscn" id="8_ly3hx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_46lwt")
@@ -516,8 +517,7 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_x25rp")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6mel"]
-size = Vector2(194, 199)
+[node name="TestLevel" type="Node2D"]
 
 [node name="TestLevel" type="Node2D"]
 
