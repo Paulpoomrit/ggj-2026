@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://bc0iahe7g074w"]
+[gd_scene load_steps=9 format=4 uid="uid://bc0iahe7g074w"]
 
 [ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_y5xn8"]
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="2_xw12x"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="3_q6ciu"]
 [ext_resource type="PackedScene" uid="uid://5pxmwwiwq8xn" path="res://scenes/floating_enemy.tscn" id="4_bvjaj"]
 [ext_resource type="PackedScene" uid="uid://c8k6kv2h75xam" path="res://UI/pause_menu.tscn" id="5_y5xn8"]
+[ext_resource type="PackedScene" uid="uid://cswh721hx7yfx" path="res://scenes/Exit.tscn" id="6_t8sbe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("2_xw12x")
@@ -546,3 +547,6 @@ position = Vector2(607, 959)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_y5xn8")]
 metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" parent="." instance=ExtResource("6_t8sbe")]
+position = Vector2(-126, -665)
