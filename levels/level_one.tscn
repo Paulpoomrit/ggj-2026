@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://brhxug8pmagid"]
+[gd_scene load_steps=10 format=4 uid="uid://2bt0y8bvj7q4"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_m04wh"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_x25rp"]
 [ext_resource type="PackedScene" path="res://scenes/ground_enemy.tscn" id="4_e7anx"]
 [ext_resource type="PackedScene" uid="uid://bsuot5fath7hk" path="res://scenes/PressurePlate.tscn" id="5_ur00s"]
-[ext_resource type="PackedScene" uid="uid://c7eme558vq3y" path="res://scenes/Gate.tscn" id="6_wndkh"]
+[ext_resource type="PackedScene" path="res://scenes/Gate.tscn" id="6_wndkh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_46lwt")

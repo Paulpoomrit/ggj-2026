@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="ggj-2026"
-run/main_scene="uid://brhxug8pmagid"
+run/main_scene="uid://2bt0y8bvj7q4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
 

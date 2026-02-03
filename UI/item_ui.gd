@@ -60,6 +60,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_RIGHT:
 				scroll_next()
 	mask_selected.emit(target_index)
+	
 	print("Mask selected: ", target_index)
 	var game_state: GameManager.GAME_STATE = convert_index_game_state(target_index)
 	
