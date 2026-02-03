@@ -2,6 +2,7 @@ extends Node
 
 
 enum GAME_STATE {HAPPY, ANGRY, SAD}
+enum LEVELS {LEVEL_ONE, LEVEL_TWO, LEVEL_THREE}
 
 
 signal on_game_state_changed(state: GAME_STATE)
@@ -15,4 +16,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
+
+
+func switch_to_level(level: LEVELS) -> void:
 	pass
