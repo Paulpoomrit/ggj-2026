@@ -448,18 +448,18 @@ script = ExtResource("1_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, -203)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
-position = Vector2(-0.888916, 0.5000458)
-scale = Vector2(0.5995371, 0.5995371)
+position = Vector2(-0.5001221, 8.000092)
+scale = Vector2(1.1997396, 1.1851853)
 texture = ExtResource("3_dqkch")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -1153.0
-offset_top = -37.999996
-offset_right = -62.0
-offset_bottom = 821.0
+offset_left = -2296.0
+offset_top = 415.0
+offset_right = -763.2412
+offset_bottom = 1580.8967
 scale = Vector2(0.58, 0.58)
 texture = ExtResource("3_3v2ag")
 
@@ -468,10 +468,10 @@ anchors_preset = 0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -1091.0
-offset_top = 221.0
-offset_right = -792.5
-offset_bottom = 423.0
+offset_left = -2092.0
+offset_top = 702.0
+offset_right = -1793.5
+offset_bottom = 904.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_vertical = 8

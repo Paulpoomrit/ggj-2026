@@ -13,9 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bvaf7n2mcd4ya" path="res://assets/sprites/Tech/IMG_3583.PNG" id="11_8q7kt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsr77"]
-custom_solver_bias = 0.314
-radius = 13.0
-height = 148.12
+height = 154.0
 
 [sub_resource type="GDScript" id="GDScript_lbhrr"]
 script/source = "extends VisibleOnScreenNotifier2D
@@ -63,7 +61,7 @@ motion_mode = 1
 script = ExtResource("1_t3rxf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.25, -11.5)
+position = Vector2(3, -11.5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_bsr77")
 

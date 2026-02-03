@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 			if player == null:
 				return
 				
-			var player_size_x = player.get_node("CollisionShape2D").shape.size.x
+			var player_size_x = player.get_node("CollisionShape2D").shape.radius
 			var player_pos_x = player.position.x + player_size_x
 
 			if (position.x <= player_pos_x):
@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 			if player == null:
 				return
 			
-			var player_size_x = player.get_node("CollisionShape2D").shape.size.x
+			var player_size_x = player.get_node("CollisionShape2D").shape.radius
 			
 			var player_pos_x = player.position.x + player_size_x
 			
