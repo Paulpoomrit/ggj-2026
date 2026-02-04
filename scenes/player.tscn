@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://bsfa1tlsh7fwr"]
+[gd_scene load_steps=104 format=3 uid="uid://bsfa1tlsh7fwr"]
 
 [ext_resource type="Script" uid="uid://bdf8a0uau7y2d" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dqrvbvkfvxwhw" path="res://assets/ui/Mask_select_bg.png" id="3_3v2ag"]
@@ -100,6 +100,7 @@
 [ext_resource type="Texture2D" uid="uid://ckkhteku76g4s" path="res://assets/Moods/walk/SAD-2/sad_run0006.png" id="89_uukdq"]
 [ext_resource type="Texture2D" uid="uid://dx7pgxex4cxp6" path="res://assets/Moods/walk/SAD-2/sad_run0007.png" id="90_3k3j0"]
 [ext_resource type="Texture2D" uid="uid://crnou2jvpbtby" path="res://assets/Moods/walk/SAD-2/sad_run0008.png" id="91_0bpox"]
+[ext_resource type="PackedScene" uid="uid://ccn7waaxgn0fb" path="res://scenes/bgm_handler.tscn" id="101_reqs7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 15.462788
@@ -157,7 +158,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_angry",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -210,7 +211,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_happy",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +264,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_sad",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -292,7 +293,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump_angry",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -321,7 +322,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump_happy",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -350,7 +351,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump_sad",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -444,6 +445,8 @@ animations = [{
 collision_layer = 0
 script = ExtResource("1_g2els")
 
+[node name="BGMHandler" parent="." instance=ExtResource("101_reqs7")]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -451,15 +454,15 @@ position = Vector2(9, -203)
 zoom = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
-position = Vector2(-0.5001221, 8.000092)
+position = Vector2(-1, 8)
 scale = Vector2(1.1997396, 1.1851853)
 texture = ExtResource("3_dqkch")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -2296.0
-offset_top = 415.0
-offset_right = -763.2412
-offset_bottom = 1580.8967
+offset_top = 215.0
+offset_right = -232.54663
+offset_bottom = 1725.7244
 scale = Vector2(0.58, 0.58)
 texture = ExtResource("3_3v2ag")
 
@@ -468,12 +471,13 @@ anchors_preset = 0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -2092.0
-offset_top = 702.0
-offset_right = -1793.5
-offset_bottom = 904.0
+offset_left = -2160.0
+offset_top = 700.0
+offset_right = -1861.5
+offset_bottom = 902.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(2.18, 2.18)
 size_flags_vertical = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -483,10 +487,10 @@ skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(35, -31)
+position = Vector2(35, -63)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"jump_angry"
+animation = &"walk_sad"
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var item_ui: ItemUI = $ItemUI
 
 const SPEED = 600.0
-const JUMP_VELOCITY = -700.0
+const JUMP_VELOCITY = -1000.0
 var state: int = 1
 
 
