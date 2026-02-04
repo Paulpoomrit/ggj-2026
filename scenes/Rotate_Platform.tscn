@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://clhu8o432f4u0"]
+[gd_scene load_steps=6 format=3 uid="uid://c31c2akg4wxa0"]
 
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://assets/icon.svg" id="1_o670s"]
-[ext_resource type="Script" uid="uid://bacr7sh10l5io" path="res://scenes/rotate_platform.gd" id="1_ueddw"]
+[ext_resource type="Script" uid="uid://bacr7sh10l5io" path="res://scripts/rotate_platform.gd" id="1_ueddw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnhrx"]
 size = Vector2(260, 47)
@@ -12,28 +12,28 @@ size = Vector2(257, 47)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehn4g"]
 size = Vector2(796, 20)
 
-[node name="Node2D" type="RigidBody2D" unique_id=1502707702]
+[node name="Node2D" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_ueddw")
 
-[node name="Right" type="Area2D" parent="." unique_id=398673641]
+[node name="Right" type="Area2D" parent="."]
 position = Vector2(272, -61)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=1867013744]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
 shape = SubResource("RectangleShape2D_dnhrx")
 
-[node name="Left" type="Area2D" parent="." unique_id=1737082017]
+[node name="Left" type="Area2D" parent="."]
 position = Vector2(-391, -45)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left" unique_id=242181588]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
 position = Vector2(118.5, -13.5)
 shape = SubResource("RectangleShape2D_xt4d1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1793767326]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -2)
 shape = SubResource("RectangleShape2D_ehn4g")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1567720273]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 position = Vector2(3, 0.5)
 scale = Vector2(6.234375, 0.14843751)
 texture = ExtResource("1_o670s")

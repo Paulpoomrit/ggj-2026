@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://b1pcykdp361ti"]
+[gd_scene load_steps=11 format=4 uid="uid://b0v5u4qr4hl05"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_d0lx0"]
 [ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_e70pa"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="2_e70pa"]
 [ext_resource type="PackedScene" uid="uid://crgofd1uegact" path="res://scenes/disappearing_platform.tscn" id="3_ba5af"]
 [ext_resource type="PackedScene" uid="uid://bsuot5fath7hk" path="res://scenes/PressurePlate.tscn" id="4_d3qt7"]
-[ext_resource type="PackedScene" uid="uid://rcchusq3cd27" path="res://scenes/ground_enemy.tscn" id="5_2wd80"]
+[ext_resource type="PackedScene" uid="uid://qcuffjs2rnp4" path="res://scenes/ground_enemy.tscn" id="5_2wd80"]
 [ext_resource type="PackedScene" uid="uid://c8k6kv2h75xam" path="res://UI/pause_menu.tscn" id="7_ba5af"]
 [ext_resource type="PackedScene" uid="uid://cswh721hx7yfx" path="res://scenes/Exit.tscn" id="8_d3qt7"]
 

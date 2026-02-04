@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bb25i6rw2uudi"]
+[gd_scene load_steps=8 format=4 uid="uid://davn6k1d73ktx"]
 
 [ext_resource type="Texture2D" uid="uid://bej4hbt56v8km" path="res://assets/enemy.jpg" id="1_hj4ew"]
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="2_0nwul"]
 [ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/player.tscn" id="3_mkbf8"]
-[ext_resource type="PackedScene" path="res://scenes/ground_enemy.tscn" id="5_mkbf8"]
-[ext_resource type="PackedScene" path="res://scenes/floating_enemy.tscn" id="6_jlr5r"]
+[ext_resource type="PackedScene" uid="uid://qcuffjs2rnp4" path="res://scenes/ground_enemy.tscn" id="5_mkbf8"]
+[ext_resource type="PackedScene" uid="uid://bar7sqm31f0fe" path="res://scenes/floating_enemy.tscn" id="6_jlr5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("2_0nwul")

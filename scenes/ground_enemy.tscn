@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://rcchusq3cd27"]
+[gd_scene load_steps=7 format=3 uid="uid://qcuffjs2rnp4"]
 
 [ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="1_a3meg"]
 [ext_resource type="Texture2D" uid="uid://5oop1bbd4dqd" path="res://assets/sprites/Orchestra/Orchestra.PNG" id="2_t2poe"]
