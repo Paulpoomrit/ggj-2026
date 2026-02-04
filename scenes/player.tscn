@@ -268,16 +268,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("53_5c21n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55_77pet")
-}, {
-"duration": 1.0,
 "texture": ExtResource("56_tlhxf")
 }, {
 "duration": 1.0,
 "texture": ExtResource("57_hrkfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_dnnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wqna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_l7gmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_kft7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_dnnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wqna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_l7gmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_kft7l")
 }, {
 "duration": 1.0,
 "texture": ExtResource("58_dnnjp")
@@ -314,12 +332,6 @@ animations = [{
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("58_oxcmq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_a3eqm")
-}, {
 "duration": 1.0,
 "texture": ExtResource("61_plx2b")
 }, {
@@ -386,16 +398,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("63_kg5hq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_2xkbm")
-}, {
-"duration": 1.0,
 "texture": ExtResource("66_dqoq3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("67_y8tjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5eiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_uukdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3k3j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_0bpox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5eiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_uukdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3k3j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_0bpox")
 }, {
 "duration": 1.0,
 "texture": ExtResource("76_5eiju")
@@ -568,7 +598,7 @@ shape = SubResource("CircleShape2D_qhqgy")
 position = Vector2(35, -63)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"jump_happy"
+animation = &"jump_sad"
 
 [node name="Area2D" type="Area2D" parent="."]
 
