@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	var just_jumped := false
+	var just_jumped = false
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		print("JUMP PRESSED! State: ", state)
 		match state:
@@ -46,6 +46,15 @@ func _physics_process(delta: float) -> void:
 				animated_sprite_2d.play("jump_angry")
 		velocity.y = JUMP_VELOCITY
 		just_jumped = true
+	
+	if not is_on_floor():
+		match state:
+			0: 
+				animated_sprite_2d.play("jump_happy")
+			2: 
+				animated_sprite_2d.play("jump_sad")
+			1: 
+				animated_sprite_2d.play("jump_angry")
 	
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:

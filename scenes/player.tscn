@@ -290,10 +290,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("61_kft7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_5c21n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_77pet")
 }],
 "loop": false,
 "name": &"jump_angry",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -319,10 +325,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("70_edwuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_oxcmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_a3eqm")
 }],
 "loop": false,
 "name": &"jump_happy",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -348,10 +360,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("79_0bpox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_kg5hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_2xkbm")
 }],
 "loop": false,
 "name": &"jump_sad",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -490,7 +508,7 @@ shape = SubResource("CircleShape2D_qhqgy")
 position = Vector2(35, -63)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"walk_sad"
+animation = &"jump_sad"
 
 [node name="Area2D" type="Area2D" parent="."]
 
