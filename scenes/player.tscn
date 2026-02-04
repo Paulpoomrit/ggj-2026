@@ -292,6 +292,18 @@ animations = [{
 "texture": ExtResource("61_kft7l")
 }, {
 "duration": 1.0,
+"texture": ExtResource("58_dnnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wqna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_l7gmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_kft7l")
+}, {
+"duration": 1.0,
 "texture": ExtResource("53_5c21n")
 }, {
 "duration": 1.0,
@@ -327,6 +339,42 @@ animations = [{
 "texture": ExtResource("70_edwuo")
 }, {
 "duration": 1.0,
+"texture": ExtResource("67_2s4os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2em0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_qe2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_edwuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_2s4os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2em0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_qe2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_edwuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_2s4os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2em0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_qe2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_edwuo")
+}, {
+"duration": 1.0,
 "texture": ExtResource("58_oxcmq")
 }, {
 "duration": 1.0,
@@ -348,6 +396,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("67_y8tjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5eiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_uukdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3k3j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_0bpox")
 }, {
 "duration": 1.0,
 "texture": ExtResource("76_5eiju")
@@ -508,7 +568,7 @@ shape = SubResource("CircleShape2D_qhqgy")
 position = Vector2(35, -63)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"jump_sad"
+animation = &"jump_happy"
 
 [node name="Area2D" type="Area2D" parent="."]
 
