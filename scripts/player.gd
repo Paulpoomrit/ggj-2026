@@ -8,9 +8,13 @@ extends CharacterBody2D
 @onready var sprite_base_scale: Vector2 = animated_sprite_2d.scale
 
 
+@export var bonce_particle_scene: PackedScene = preload("res://scenes/bounce_particles.tscn")
+
+
 const SPEED = 600.0
 const JUMP_VELOCITY = -1000.0
 var state: int = 1
+var was_on_floor = true
 
 
 func _ready() -> void:
@@ -44,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		print("JUMP PRESSED! State: ", state)
+		# print("JUMP PRESSED! State: ", state)
 		match state:
 			0: 
 				animated_sprite_2d.play("jump_happy")
@@ -66,6 +70,7 @@ func _physics_process(delta: float) -> void:
 			1: 
 				animated_sprite_2d.play("jump_angry")
 	
+	# Movement
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -82,16 +87,38 @@ func _physics_process(delta: float) -> void:
 				0: animated_sprite_2d.play("idle_happy")
 				2: animated_sprite_2d.play("idle_sad")
 				1: animated_sprite_2d.play("idle_angry")
-	
 	move_and_slide()
+	
+	# Landing
+	if not was_on_floor and is_on_floor():
+		animation_player.play("bounce")
+		spawn_bounce_particles(self.get_position(), Vector2(1,1))
+	was_on_floor = is_on_floor()
+	
+	
+	# Collision updates
+	var collision = move_and_collide(velocity * delta)
+	if not collision:
+		return
+	var normal: Vector2 = collision.get_normal()
+	spawn_bounce_particles(collision.get_position(), normal)
 
 
 func _process(delta: float) -> void:
 	set_scale_based_on_velocity()
 
 
+### VISUALS ###
 func set_scale_based_on_velocity() -> void:
 	if animation_player.is_playing():
 		return
 	
 	animated_sprite_2d.scale = lerp(sprite_base_scale, sprite_base_scale * Vector2(1.05, 1), velocity.length()/1600)
+
+
+func spawn_bounce_particles(pos: Vector2, normal: Vector2) -> void:
+	var instance = bonce_particle_scene.instantiate()
+	get_tree().get_current_scene().add_child(instance)
+	instance.global_position = pos
+	instance.rotation = normal.angle()
+	
