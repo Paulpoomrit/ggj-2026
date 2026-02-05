@@ -4,14 +4,13 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area: Area2D = $Area2D
 @onready var item_ui: ItemUI = $ItemUI
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite_base_scale: Vector2 = animated_sprite_2d.scale
 
 
 const SPEED = 600.0
 const JUMP_VELOCITY = -1000.0
 var state: int = 1
-
-
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
@@ -26,12 +25,14 @@ func _on_game_state_changed(game_state: GameManager.GAME_STATE) -> void:
 		GameManager.GAME_STATE.ANGRY:
 			state = 1
 
+
 func handle_enemy_bouncing() -> void:
 	if velocity.y <= 0:
 		return
 	if area.has_overlapping_areas():
 		print("colliding")
 		velocity.y = JUMP_VELOCITY
+
 
 func _physics_process(delta: float) -> void:
 	handle_enemy_bouncing()
@@ -83,3 +84,14 @@ func _physics_process(delta: float) -> void:
 				1: animated_sprite_2d.play("idle_angry")
 	
 	move_and_slide()
+
+
+func _process(delta: float) -> void:
+	set_scale_based_on_velocity()
+
+
+func set_scale_based_on_velocity() -> void:
+	if animation_player.is_playing():
+		return
+	
+	animated_sprite_2d.scale = lerp(sprite_base_scale, sprite_base_scale * Vector2(1.05, 1), velocity.length()/1600)

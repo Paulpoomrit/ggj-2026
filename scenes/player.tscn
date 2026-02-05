@@ -633,7 +633,7 @@ skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(35, -63)
+position = Vector2(35, -75)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_dqkch")
 animation = &"jump_sad"
