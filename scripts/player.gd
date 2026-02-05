@@ -34,7 +34,7 @@ func handle_enemy_bouncing() -> void:
 	if velocity.y <= 0:
 		return
 	if area.has_overlapping_areas():
-		print("colliding")
+		# print("colliding")
 		velocity.y = JUMP_VELOCITY
 
 
@@ -92,7 +92,7 @@ func _physics_process(delta: float) -> void:
 	# Landing
 	if not was_on_floor and is_on_floor():
 		animation_player.play("bounce")
-		spawn_bounce_particles(self.get_position(), Vector2(1,1))
+		spawn_bounce_particles(self.get_position(), Vector2(1,0))
 	was_on_floor = is_on_floor()
 	
 	
