@@ -1,12 +1,17 @@
 extends CharacterBody2D
 
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area: Area2D = $Area2D
 @onready var item_ui: ItemUI = $ItemUI
 
+
 const SPEED = 600.0
 const JUMP_VELOCITY = -1000.0
 var state: int = 1
+
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
@@ -35,6 +40,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	var just_jumped = false
+	
+	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		print("JUMP PRESSED! State: ", state)
 		match state:
@@ -46,7 +53,9 @@ func _physics_process(delta: float) -> void:
 				animated_sprite_2d.play("jump_angry")
 		velocity.y = JUMP_VELOCITY
 		just_jumped = true
+		animation_player.play("bounce")
 	
+	# Switch mask in the middle of jump action
 	if not is_on_floor():
 		match state:
 			0: 
