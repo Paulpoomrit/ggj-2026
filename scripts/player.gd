@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 
 @export var bonce_particle_scene: PackedScene = preload("res://scenes/bounce_particles.tscn")
-
+@export var switch_mask_particle_scene: PackedScene = preload("res://scenes/switch_mask_particles.tscn")
 
 const SPEED = 600.0
 const JUMP_VELOCITY = -1000.0
@@ -28,7 +28,11 @@ func _on_game_state_changed(game_state: GameManager.GAME_STATE) -> void:
 			state = 2
 		GameManager.GAME_STATE.ANGRY:
 			state = 1
-
+	
+	# Spawn Particles
+	var mask_particles = switch_mask_particle_scene.instantiate()
+	self.add_child(mask_particles)
+	mask_particles.global_position = self.global_position + Vector2(0, -75)
 
 func handle_enemy_bouncing() -> void:
 	if velocity.y <= 0:

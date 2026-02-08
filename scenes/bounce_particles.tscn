@@ -1,14 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlssvpu1vxk2u"]
+[gd_scene load_steps=7 format=3 uid="uid://dlssvpu1vxk2u"]
 
 [ext_resource type="Texture2D" uid="uid://coltmrm223xsp" path="res://assets/Particles/fuzzy_ball.png" id="1_yb1m1"]
+[ext_resource type="Texture2D" uid="uid://b0rayslda6xm1" path="res://scenes/particles_colour_ramp.tres" id="2_kbuex"]
 [ext_resource type="Script" uid="uid://mrxf5kg3x6je" path="res://scripts/bounce_particles.gd" id="2_yb1m1"]
-
-[sub_resource type="Gradient" id="Gradient_s80vs"]
-colors = PackedColorArray(0.26666668, 0.16862746, 0.35686275, 1, 0.5921569, 0.6, 0.89411765, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1g6nd"]
-gradient = SubResource("Gradient_s80vs")
-width = 331
 
 [sub_resource type="Curve" id="Curve_2yjfb"]
 _data = [Vector2(0, 0.88605314), 0.0, 0.0, 0, 0, Vector2(0.24770644, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -28,7 +22,7 @@ damping_min = 15.000001
 damping_max = 25.000002
 scale_max = 1.25
 scale_curve = SubResource("CurveTexture_dnnjp")
-color_ramp = SubResource("GradientTexture1D_1g6nd")
+color_ramp = ExtResource("2_kbuex")
 hue_variation_min = -2.2351742e-08
 hue_variation_max = -2.2351742e-08
 turbulence_noise_strength = 20.0
