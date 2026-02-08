@@ -43,6 +43,12 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity if ground enemy.
 	if not is_on_floor() && motion_mode == MOTION_MODE_GROUNDED:
 		velocity += get_gravity() * delta
+		
+	# early return if the player
+	if player.position.distance_to(self.position) > 3000:
+		print('player too far')
+		return
+	
 	
 	match current_mask:
 		GameManager.GAME_STATE.HAPPY:
