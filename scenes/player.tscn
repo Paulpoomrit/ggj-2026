@@ -600,37 +600,49 @@ script = ExtResource("1_g2els")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, -203)
 zoom = Vector2(0.25, 0.25)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
 script = ExtResource("3_2yjfb")
 
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
-scale = Vector2(1.21, 1.21)
-texture = ExtResource("3_dqkch")
+[node name="PointLight2D" type="PointLight2D" parent="Camera2D"]
+position = Vector2(52, 119)
+shadow_enabled = true
+texture = ExtResource("103_dnnjp")
+texture_scale = 11.7
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -2296.0
-offset_top = 215.0
-offset_right = -232.54663
-offset_bottom = 1725.7244
-scale = Vector2(0.58, 0.58)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_dqkch")
+offset = Vector2(1920.8334, 1079.1666)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = 418.00003
+offset_right = 1090.0
+offset_bottom = 1277.0002
+scale = Vector2(0.27, 0.27)
 texture = ExtResource("3_3v2ag")
 
-[node name="ItemUI" parent="." instance=ExtResource("3_qhqgy")]
+[node name="ItemUI" parent="CanvasLayer" instance=ExtResource("3_qhqgy")]
 anchors_preset = 0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -2160.0
-offset_top = 700.0
-offset_right = -1861.5
-offset_bottom = 902.0
+offset_left = -2.0
+offset_top = 513.0
+offset_right = -2.0
+offset_bottom = 713.33
 grow_horizontal = 1
 grow_vertical = 1
-scale = Vector2(2.18, 2.18)
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(270.37036, 53.888855)
 size_flags_vertical = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(45, -1.9999999)
-scale = Vector2(3.99, 3.99)
+scale = Vector2(3, 3)
 skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
 
@@ -655,9 +667,3 @@ shape = SubResource("CircleShape2D_qhqgy")
 libraries = {
 &"": SubResource("AnimationLibrary_2yjfb")
 }
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(61, -84)
-shadow_enabled = true
-texture = ExtResource("103_dnnjp")
-texture_scale = 11.7

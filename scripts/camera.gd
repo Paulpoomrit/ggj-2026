@@ -10,11 +10,14 @@ var _previous_y = 0.0
 var _last_offset = Vector2(0, 0)
 
 func _ready():
+	self.position_smoothing_enabled = true
+	self.position_smoothing_speed = 3
 	set_process(true)
 	GameManager.on_camera_shake.connect(shake)
 
 # Shake with decreasing intensity while there's time remaining.
 func _process(delta):
+	print(global_position)
 	# Only shake when there's shake time remaining.
 	if _timer == 0:
 		return
