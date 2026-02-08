@@ -33,7 +33,7 @@ func _on_game_state_changed(game_state: GameManager.GAME_STATE) -> void:
 			state = 1
 	
 	# Spawn Particles
-	GameManager.on_camera_shake.emit(0.3, 20, 15)
+	GameManager.on_camera_shake.emit(.15, 20, 15)
 	var mask_particles = switch_mask_particle_scene.instantiate()
 	mask_particles.emotion_state = game_state
 	self.add_child(mask_particles)
@@ -130,4 +130,3 @@ func spawn_bounce_particles(pos: Vector2, normal: Vector2) -> void:
 	get_tree().get_current_scene().add_child(instance)
 	instance.global_position = pos
 	instance.rotation = normal.angle()
-	
