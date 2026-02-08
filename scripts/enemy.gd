@@ -56,9 +56,9 @@ func _physics_process(delta: float) -> void:
 			var player_size_x = player.get_node("CollisionShape2D").shape.radius
 			var player_pos_x = player.position.x + player_size_x
 
-			if (position.x + 200 < player_pos_x):
+			if (position.x + 400 < player_pos_x):
 				direction = 1
-			else:
+			elif (position.x - 400 > player_pos_x):
 				direction = -1
 
 			speed = ENEMY_SPEED

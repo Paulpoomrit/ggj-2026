@@ -558,7 +558,7 @@ script = ExtResource("5_jj3p3")
 target_object = NodePath("../EnemySideDoor2")
 
 [node name="GroundEnemy3" parent="." instance=ExtResource("4_e7anx")]
-position = Vector2(12767, -48)
+position = Vector2(12547.001, -54)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_x25rp")]
