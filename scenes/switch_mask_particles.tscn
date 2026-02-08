@@ -1,26 +1,85 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2j5ymgl0dxoq"]
+[gd_scene load_steps=19 format=3 uid="uid://d2j5ymgl0dxoq"]
 
 [ext_resource type="Texture2D" uid="uid://coltmrm223xsp" path="res://assets/Particles/fuzzy_ball.png" id="1_egt5n"]
-[ext_resource type="Texture2D" uid="uid://b0rayslda6xm1" path="res://scenes/particles_colour_ramp.tres" id="2_6m7sv"]
-[ext_resource type="Script" uid="uid://dnfnk2c8eaesu" path="res://scenes/switch_mask_particles.gd" id="3_6m7sv"]
+[ext_resource type="Material" uid="uid://biotikeu4yk8a" path="res://Resources/switch_mask_particles_base.tres" id="2_6m7sv"]
+[ext_resource type="Script" uid="uid://dnfnk2c8eaesu" path="res://scripts/switch_mask_particles.gd" id="3_6m7sv"]
 
-[sub_resource type="Curve" id="Curve_l7gmo"]
+[sub_resource type="Gradient" id="Gradient_6m7sv"]
+offsets = PackedFloat32Array(0, 0.6201923)
+colors = PackedColorArray(0.26666668, 0.16862746, 0.35686275, 1, 1, 0.6784314, 0.29803923, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ehq43"]
+gradient = SubResource("Gradient_6m7sv")
+width = 331
+
+[sub_resource type="Curve" id="Curve_rhlli"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.8926973, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_kft7l"]
-curve = SubResource("Curve_l7gmo")
+[sub_resource type="CurveTexture" id="CurveTexture_jdkau"]
+curve = SubResource("Curve_rhlli")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2s4os"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wwpef"]
 particle_flag_disable_z = true
 spread = 180.0
 initial_velocity_min = 322.4
 initial_velocity_max = 322.4
-gravity = Vector3(0, 98, 0)
+gravity = Vector3(0, 0, 0)
 scale_min = 0.06
 scale_max = 0.5
-scale_curve = SubResource("CurveTexture_kft7l")
-color_ramp = ExtResource("2_6m7sv")
+scale_curve = SubResource("CurveTexture_jdkau")
+color_ramp = SubResource("GradientTexture1D_ehq43")
+
+[sub_resource type="Gradient" id="Gradient_ehq43"]
+offsets = PackedFloat32Array(0, 0.5592949)
+colors = PackedColorArray(0.26666668, 0.16862746, 0.35686275, 1, 1, 0.4, 0.57254905, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rhlli"]
+gradient = SubResource("Gradient_ehq43")
+width = 331
+
+[sub_resource type="Curve" id="Curve_jdkau"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.8926973, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wwpef"]
+curve = SubResource("Curve_jdkau")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e0hnc"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 322.4
+initial_velocity_max = 322.4
+gravity = Vector3(0, 0, 0)
+scale_min = 0.06
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_wwpef")
+color_ramp = SubResource("GradientTexture1D_rhlli")
+
+[sub_resource type="Gradient" id="Gradient_rhlli"]
+colors = PackedColorArray(0.26666668, 0.16862746, 0.35686275, 1, 0.5921569, 0.6, 0.89411765, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jdkau"]
+gradient = SubResource("Gradient_rhlli")
+width = 331
+
+[sub_resource type="Curve" id="Curve_wwpef"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.8926973, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e0hnc"]
+curve = SubResource("Curve_wwpef")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ar4ng"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 322.4
+initial_velocity_max = 322.4
+gravity = Vector3(0, 0, 0)
+scale_min = 0.06
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_e0hnc")
+color_ramp = SubResource("GradientTexture1D_jdkau")
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
 emitting = false
@@ -29,8 +88,11 @@ texture = ExtResource("1_egt5n")
 lifetime = 1.7
 one_shot = true
 explosiveness = 0.77
-process_material = SubResource("ParticleProcessMaterial_2s4os")
+process_material = ExtResource("2_6m7sv")
 script = ExtResource("3_6m7sv")
+happy_process_material = SubResource("ParticleProcessMaterial_wwpef")
+angry_process_material = SubResource("ParticleProcessMaterial_e0hnc")
+sad_process_material = SubResource("ParticleProcessMaterial_ar4ng")
 
 [node name="Timer" type="Timer" parent="."]
 

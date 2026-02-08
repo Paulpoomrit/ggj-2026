@@ -31,6 +31,7 @@ func _on_game_state_changed(game_state: GameManager.GAME_STATE) -> void:
 	
 	# Spawn Particles
 	var mask_particles = switch_mask_particle_scene.instantiate()
+	mask_particles.emotion_state = game_state
 	self.add_child(mask_particles)
 	mask_particles.global_position = self.global_position + Vector2(0, -75)
 
