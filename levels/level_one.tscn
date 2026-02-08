@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://brhxug8pmagid"]
+[gd_scene load_steps=15 format=4 uid="uid://brhxug8pmagid"]
 
 [ext_resource type="Texture2D" uid="uid://b8cxhn7wlemtc" path="res://assets/placeholder/Tiles.png" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://c0ibj22fk7wpm" path="res://scenes/background_paper.tscn" id="1_m04wh"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3smwl8ylr6on" path="res://scenes/Gate.tscn" id="6_wndkh"]
 [ext_resource type="PackedScene" uid="uid://c8k6kv2h75xam" path="res://UI/pause_menu.tscn" id="7_hu4x8"]
 [ext_resource type="PackedScene" uid="uid://cswh721hx7yfx" path="res://scenes/Exit.tscn" id="9_moue2"]
+[ext_resource type="Shader" uid="uid://dh0syefccaw0s" path="res://shaders/post_processing.gdshader" id="11_n054k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x25rp"]
 texture = ExtResource("1_46lwt")
@@ -521,6 +522,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_x25rp")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxr4u"]
+shader = ExtResource("11_n054k")
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="BackgroundPaper" parent="." instance=ExtResource("1_m04wh")]
@@ -582,3 +586,13 @@ level = 1
 
 [node name="Player" parent="." instance=ExtResource("2_x25rp")]
 position = Vector2(-659, 378)
+
+[node name="Post-processing" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Post-processing"]
+material = SubResource("ShaderMaterial_wxr4u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

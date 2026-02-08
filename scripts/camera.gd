@@ -17,7 +17,6 @@ func _ready():
 
 # Shake with decreasing intensity while there's time remaining.
 func _process(delta):
-	print(global_position)
 	# Only shake when there's shake time remaining.
 	if _timer == 0:
 		return
