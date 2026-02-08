@@ -11,6 +11,7 @@ var _last_offset = Vector2(0, 0)
 
 func _ready():
 	set_process(true)
+	GameManager.on_camera_shake.connect(shake)
 
 # Shake with decreasing intensity while there's time remaining.
 func _process(delta):
@@ -54,4 +55,3 @@ func shake(duration, frequency, amplitude):
 	# Reset previous offset, if any.
 	set_offset(get_offset() - _last_offset)
 	_last_offset = Vector2(0, 0)
-

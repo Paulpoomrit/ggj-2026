@@ -1,6 +1,7 @@
-[gd_scene load_steps=107 format=3 uid="uid://bsfa1tlsh7fwr"]
+[gd_scene load_steps=108 format=3 uid="uid://bsfa1tlsh7fwr"]
 
 [ext_resource type="Script" uid="uid://bdf8a0uau7y2d" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bnrw5uyvn7uc0" path="res://scripts/camera.gd" id="3_2yjfb"]
 [ext_resource type="Texture2D" uid="uid://dqrvbvkfvxwhw" path="res://assets/ui/Mask_select_bg.png" id="3_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://df4aoe7wr1021" path="res://assets/background_curtains.PNG" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://beiv8spglpk43" path="res://UI/item_ui.tscn" id="3_qhqgy"]
@@ -598,10 +599,10 @@ script = ExtResource("1_g2els")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, -203)
 zoom = Vector2(0.25, 0.25)
+script = ExtResource("3_2yjfb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
-position = Vector2(-1, 8)
-scale = Vector2(1.1997396, 1.1851853)
+scale = Vector2(1.21, 1.21)
 texture = ExtResource("3_dqkch")
 
 [node name="TextureRect" type="TextureRect" parent="."]
