@@ -19,6 +19,9 @@ var was_on_floor = true
 
 func _ready() -> void:
 	GameManager.on_game_state_changed.connect(_on_game_state_changed)
+	
+	# Always start with 'happy'
+	GameManager.on_game_state_changed.emit(GameManager.GAME_STATE.HAPPY)
 
 func _on_game_state_changed(game_state: GameManager.GAME_STATE) -> void:
 	match game_state:
