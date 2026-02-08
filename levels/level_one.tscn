@@ -542,15 +542,24 @@ scale = Vector2(2.5, 2.5)
 [node name="EnemySideDoor" parent="." instance=ExtResource("6_wndkh")]
 position = Vector2(10409, -637)
 
+[node name="EnemySideDoor2" parent="." instance=ExtResource("6_wndkh")]
+position = Vector2(9550, -637)
+
 [node name="PressurePlate" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_ur00s")]
-position = Vector2(11310.001, -84)
+position = Vector2(11413, -106.00001)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("5_jj3p3")
 target_object = NodePath("../EnemySideDoor")
 
+[node name="PressurePlate2" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_ur00s")]
+position = Vector2(9182.001, -105)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("5_jj3p3")
+target_object = NodePath("../EnemySideDoor2")
+
 [node name="GroundEnemy3" parent="." instance=ExtResource("4_e7anx")]
-position = Vector2(12507, -101)
-scale = Vector2(2, 2)
+position = Vector2(12767, -48)
+scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_x25rp")]
 position = Vector2(-659, 378)

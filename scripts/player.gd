@@ -12,7 +12,8 @@ extends CharacterBody2D
 @export var switch_mask_particle_scene: PackedScene = preload("res://scenes/switch_mask_particles.tscn")
 
 const SPEED = 600.0
-const JUMP_VELOCITY = -1000.0
+const JUMP_VELOCITY = -850.0
+const JUMP_BOOST = 1.2
 var state: int = 1
 var was_on_floor = true
 
@@ -43,8 +44,7 @@ func handle_enemy_bouncing() -> void:
 	if velocity.y <= 0:
 		return
 	if area.has_overlapping_areas():
-		# print("colliding")
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY * JUMP_BOOST
 
 
 func _physics_process(delta: float) -> void:

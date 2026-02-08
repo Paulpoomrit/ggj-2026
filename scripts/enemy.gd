@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = get_node("../Player")
 @onready var vis = $VisibleOnScreenNotifier2D
 @onready var sound = $AudioStreamPlayer2D
-const ENEMY_SPEED = 100
+const ENEMY_SPEED = 250
 
 var direction = 1:
 	set(value):
@@ -45,11 +45,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		
 	# early return if the player
-	if player.position.distance_to(self.position) > 3000:
-		print('player too far')
+	if player and player.position.distance_to(self.position) > 3000:
 		return
-	
-	
+
 	match current_mask:
 		GameManager.GAME_STATE.HAPPY:
 			if player == null:
