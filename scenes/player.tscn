@@ -590,6 +590,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 50
 script = ExtResource("1_g2els")
 
 [node name="BGMHandler" parent="." instance=ExtResource("101_reqs7")]
