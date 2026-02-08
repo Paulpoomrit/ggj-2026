@@ -561,9 +561,6 @@ target_object = NodePath("../EnemySideDoor2")
 position = Vector2(12547.001, -54)
 scale = Vector2(1.5, 1.5)
 
-[node name="Player" parent="." instance=ExtResource("2_x25rp")]
-position = Vector2(-659, 378)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_hu4x8")]
@@ -577,3 +574,8 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(13951, -179)
 scale = Vector2(3.4000099, 1.0800011)
 level = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_x25rp")]
+position = Vector2(-659, 378)
