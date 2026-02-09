@@ -528,8 +528,7 @@ sources/0 = SubResource("TileSetAtlasSource_x25rp")
 [node name="BackgroundPaper" parent="." instance=ExtResource("1_m04wh")]
 
 [node name="3DParallaxObject" parent="." instance=ExtResource("2_7qlxi")]
-parallax_scroll_factor = 0.98
-parallax_scale_factor = 0.98
+script = null
 
 [node name="TileMapLayer" type="TileMapLayer" parent="3DParallaxObject"]
 modulate = Color(0.4502378, 0.37925428, 0.48845974, 1)

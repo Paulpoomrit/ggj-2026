@@ -547,7 +547,7 @@ scale = Vector2(3.96, 3.96)
 position = Vector2(2157, -1741)
 
 [node name="Player" parent="." instance=ExtResource("3_q6ciu")]
-position = Vector2(607, 959)
+position = Vector2(1578, 1573)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -559,4 +559,5 @@ offset_bottom = 282.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." instance=ExtResource("6_t8sbe")]
-position = Vector2(-214, -2653)
+position = Vector2(-228, -2310.0002)
+scale = Vector2(0.65, 0.65)
