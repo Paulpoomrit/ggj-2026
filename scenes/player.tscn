@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://bsfa1tlsh7fwr"]
+[gd_scene load_steps=112 format=3 uid="uid://bsfa1tlsh7fwr"]
 
 [ext_resource type="Script" uid="uid://bdf8a0uau7y2d" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://bnrw5uyvn7uc0" path="res://scripts/camera.gd" id="3_2yjfb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bdjids2wgbrj7" path="res://assets/Moods/idle/mad/mad_idle0002.png" id="6_2w11d"]
 [ext_resource type="Texture2D" uid="uid://dxq6j2rm11sl4" path="res://assets/Moods/idle/mad/mad_idle0003.png" id="7_770dr"]
 [ext_resource type="Texture2D" uid="uid://brm2l7c526i8m" path="res://assets/Moods/idle/mad/mad_idle0004.png" id="8_8f1cb"]
+[ext_resource type="Material" uid="uid://n1ajkhqkhydw" path="res://shaders/outline_material.tres" id="8_l7gmo"]
 [ext_resource type="Texture2D" uid="uid://1sfqsppmr62s" path="res://assets/Moods/idle/mad/mad_idle0005.png" id="9_vdulj"]
 [ext_resource type="Texture2D" uid="uid://dwy68pahdeeas" path="res://assets/Moods/idle/mad/mad_idle0006.png" id="10_vau08"]
 [ext_resource type="Texture2D" uid="uid://bu1iah4xxs4ur" path="res://assets/Moods/idle/mad/mad_idle0007.png" id="11_qsb7e"]
@@ -103,6 +104,7 @@
 [ext_resource type="Texture2D" uid="uid://crnou2jvpbtby" path="res://assets/Moods/walk/SAD-2/sad_run0008.png" id="91_0bpox"]
 [ext_resource type="PackedScene" uid="uid://ccn7waaxgn0fb" path="res://scenes/bgm_handler.tscn" id="101_reqs7"]
 [ext_resource type="Texture2D" uid="uid://coltmrm223xsp" path="res://assets/Particles/fuzzy_ball.png" id="103_dnnjp"]
+[ext_resource type="Shader" uid="uid://cie0yn2trxyvw" path="res://shaders/crt.gdshader" id="104_l7gmo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 15.462788
@@ -589,6 +591,23 @@ _data = {
 &"bounce": SubResource("Animation_reqs7")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7gmo"]
+shader = ExtResource("104_l7gmo")
+shader_parameter/resolution = Vector2(800, 450)
+shader_parameter/scan_line_amount = 0.30000001425
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.010000000475
+shader_parameter/interference_amount = 0.050000002375
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.010000000475
+shader_parameter/roll_line_amount = 0.010000000475
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = 0.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 50
 script = ExtResource("1_g2els")
@@ -648,6 +667,7 @@ shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 2
+material = ExtResource("8_l7gmo")
 position = Vector2(35, -75)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_dqkch")
@@ -667,3 +687,14 @@ shape = SubResource("CircleShape2D_qhqgy")
 libraries = {
 &"": SubResource("AnimationLibrary_2yjfb")
 }
+
+[node name="Post-processing" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Post-processing"]
+material = SubResource("ShaderMaterial_l7gmo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

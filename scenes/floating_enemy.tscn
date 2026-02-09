@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bar7sqm31f0fe"]
+[gd_scene load_steps=16 format=3 uid="uid://bar7sqm31f0fe"]
 
 [ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="1_t3rxf"]
+[ext_resource type="Material" uid="uid://n1ajkhqkhydw" path="res://shaders/outline_material.tres" id="2_566ts"]
 [ext_resource type="Texture2D" uid="uid://d2ubvqwwcaaq3" path="res://assets/sprites/Tech/AnimFrames/G01.PNG" id="2_pxbhx"]
 [ext_resource type="Texture2D" uid="uid://caohj6g0fpy6j" path="res://assets/sprites/Tech/AnimFrames/G02.PNG" id="3_25hhc"]
 [ext_resource type="AudioStream" uid="uid://iy1a465sl0ft" path="res://assets/Sound/Cog Loop.ogg" id="3_myl57"]
@@ -71,11 +72,14 @@ rect = Rect2(19, 34, 112, 58)
 script = SubResource("GDScript_lbhrr")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_566ts")
 scale = Vector2(0.24843752, 0.24062505)
 sprite_frames = SubResource("SpriteFrames_4wwej")
 autoplay = "default"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("2_566ts")
 scale = Vector2(0.235, 0.235)
 texture = ExtResource("8_bsr77")
 
@@ -87,9 +91,11 @@ autoplay = true
 [node name="PlatformHolder" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="PlatformHolder"]
+material = ExtResource("2_566ts")
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("10_566ts")
 
 [node name="Sprite2D2" type="Sprite2D" parent="PlatformHolder"]
+material = ExtResource("2_566ts")
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("11_8q7kt")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://qcuffjs2rnp4"]
+[gd_scene load_steps=8 format=3 uid="uid://qcuffjs2rnp4"]
 
 [ext_resource type="Script" uid="uid://bkejggqck7cf8" path="res://scripts/enemy.gd" id="1_a3meg"]
+[ext_resource type="Material" uid="uid://n1ajkhqkhydw" path="res://shaders/outline_material.tres" id="2_5g0ai"]
 [ext_resource type="Texture2D" uid="uid://5oop1bbd4dqd" path="res://assets/sprites/Orchestra/Orchestra.PNG" id="2_t2poe"]
 [ext_resource type="AudioStream" uid="uid://djmx03i5n8sf4" path="res://assets/Sound/Tuba bounce 1.ogg" id="3_t2poe"]
 
@@ -33,6 +34,7 @@ rect = Rect2(-10, 19, 158, 127)
 script = SubResource("GDScript_lbhrr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_5g0ai")
 scale = Vector2(0.3, 0.291)
 texture = ExtResource("2_t2poe")
 
