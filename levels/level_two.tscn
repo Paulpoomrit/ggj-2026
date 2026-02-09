@@ -520,7 +520,6 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_x25rp")
 
 [node name="TestLevel" type="Node2D"]
-position = Vector2(-3, 0)
 
 [node name="BackgroundPaper" parent="." instance=ExtResource("1_e70pa")]
 
@@ -536,7 +535,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAD+/w0AAAAJAAEAAAD9/w0AAAAJAAEAAAD//w0AAAAJAAEAAAA=")
 
 [node name="PressurePlate1" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(1323.0002, 3268.0002)
+position = Vector2(1390.0001, 3251)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform1")
 
@@ -546,7 +545,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAD7/wsAAAAJAAEAAAD6/wsAAAAJAAEAAAD8/wsAAAAJAAEAAAA=")
 
 [node name="PressurePlate2" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(-966, 2254)
+position = Vector2(-1069.9999, 2239)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform2")
 
@@ -556,7 +555,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAD//wkAAAAJAAEAAAD+/wkAAAAJAAEAAAAAAAkAAAAJAAEAAAA=")
 
 [node name="PressurePlate3" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(-1473, 3268)
+position = Vector2(-1406, 3252)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform3")
 
@@ -566,7 +565,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAACAAcAAAAJAAEAAAADAAcAAAAJAAEAAAAEAAcAAAAJAAEAAAA=")
 
 [node name="PressurePlate4" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(1799, 2260)
+position = Vector2(1731.9999, 2239)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform4")
 
@@ -576,7 +575,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAABAAMAAAAJAAEAAAAAAAMAAAAJAAEAAAACAAMAAAAJAAEAAAADAAMAAAAJAAEAAAA=")
 
 [node name="PressurePlate5" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(1312, 1137.9999)
+position = Vector2(1399.0001, 1122.0001)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform5")
 
@@ -586,7 +585,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAABAP//AAAJAAEAAAAAAP//AAAJAAEAAAD/////AAAJAAEAAAA=")
 
 [node name="PressurePlate6" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(1538, 9.9999695)
+position = Vector2(1559.0001, 4.0000005)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform6")
 
@@ -596,7 +595,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAAFAP3/AAAJAAEAAAAGAP3/AAAJAAEAAAAEAP3/AAAJAAEAAAA=")
 
 [node name="PressurePlate7" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(-1253.0001, 1135)
+position = Vector2(-1245, 1120.0001)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform7")
 
@@ -605,7 +604,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAAEAPn/AAAJAAEAAAAFAPn/AAAJAAEAAAAGAPn/AAAJAAEAAAA=")
 
 [node name="PressurePlate8" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(-1470, -3.0755997e-05)
+position = Vector2(-1411, -0.99999994)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform8")
 
@@ -614,7 +613,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAD///f/AAAJAAEAAAAAAPf/AAAJAAEAAAABAPf/AAAJAAEAAAA=")
 
 [node name="PressurePlate9" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(-1214.0001, -998)
+position = Vector2(-1239.0001, -1004)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform9")
 
@@ -623,7 +622,7 @@ scale = Vector2(3.5, 3.5)
 tile_map_data = PackedByteArray("AAD7//X/AAAJAAEAAAD8//X/AAAJAAEAAAA=")
 
 [node name="PressurePlate10" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("4_d3qt7")]
-position = Vector2(1789, -1007)
+position = Vector2(1738, -1008)
 scale = Vector2(1.75, 1.75)
 target_object = NodePath("../Platform10")
 
@@ -668,7 +667,7 @@ position = Vector2(-1067, 3229)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_e70pa")]
-position = Vector2(771, 3229)
+position = Vector2(808, 3214)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -678,7 +677,8 @@ offset_right = -579.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." instance=ExtResource("8_d3qt7")]
-position = Vector2(932, -1833)
+position = Vector2(898, -1768)
+scale = Vector2(0.8, 0.8)
 level = 2
 
 [connection signal="body_exited" from="PressurePlate1" to="Player" method="_on_pressure_plate_1_body_exited"]

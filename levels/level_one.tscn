@@ -553,13 +553,13 @@ position = Vector2(10409, -637)
 position = Vector2(9550, -637)
 
 [node name="PressurePlate" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_ur00s")]
-position = Vector2(11413, -106.00001)
+position = Vector2(11476.001, -74)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("5_jj3p3")
 target_object = NodePath("../EnemySideDoor")
 
 [node name="PressurePlate2" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_ur00s")]
-position = Vector2(9182.001, -105)
+position = Vector2(9217.001, -85)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("5_jj3p3")
 target_object = NodePath("../EnemySideDoor2")
@@ -568,19 +568,24 @@ target_object = NodePath("../EnemySideDoor2")
 position = Vector2(12547.001, -54)
 scale = Vector2(1.5, 1.5)
 
+[node name="Player" parent="." instance=ExtResource("2_x25rp")]
+position = Vector2(-659, 378)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_hu4x8")]
-offset_left = -109.0
-offset_top = 24.0
-offset_right = -1261.0
-offset_bottom = -624.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." instance=ExtResource("9_moue2")]
-position = Vector2(13951, -179)
-scale = Vector2(3.4000099, 1.0800011)
+position = Vector2(14433, -418)
+scale = Vector2(2, 2)
 level = 1
-
-[node name="Player" parent="." instance=ExtResource("2_x25rp")]
-position = Vector2(-659, 378)
