@@ -50,23 +50,28 @@ func _unhandled_input(event: InputEvent) -> void:
 			MOUSE_BUTTON_WHEEL_UP:
 				scroll_previous()
 				get_viewport().set_input_as_handled()
+				update_global_emotion_state()
 			MOUSE_BUTTON_WHEEL_DOWN:
 				scroll_next()
 				get_viewport().set_input_as_handled()
+				update_global_emotion_state()
 	elif event is InputEventKey and event.pressed:
 		match event.keycode:
 			KEY_LEFT:
 				scroll_previous()
+				update_global_emotion_state()
 			KEY_RIGHT:
 				scroll_next()
+				update_global_emotion_state()
 	mask_selected.emit(target_index)
 	
-	print("Mask selected: ", target_index)
-	var game_state: GameManager.GAME_STATE = convert_index_game_state(target_index)
+	# print("Mask selected: ", target_index)
 	
-	GameManager.on_game_state_changed.emit(game_state)
 	#get_viewport().set_input_as_handled()
-	
+
+func update_global_emotion_state() -> void:
+	var game_state: GameManager.GAME_STATE = convert_index_game_state(target_index)
+	GameManager.on_game_state_changed.emit(game_state)
 
 func _update_positions(immediate: bool) -> void:
 	if slots.size() < 1:

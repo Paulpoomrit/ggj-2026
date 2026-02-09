@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = get_node("../Player")
 @onready var vis = $VisibleOnScreenNotifier2D
 @onready var sound = $AudioStreamPlayer2D
-const ENEMY_SPEED = 100
+const ENEMY_SPEED = 250
 
 var direction = 1:
 	set(value):
@@ -43,7 +43,11 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity if ground enemy.
 	if not is_on_floor() && motion_mode == MOTION_MODE_GROUNDED:
 		velocity += get_gravity() * delta
-	
+		
+	# early return if the player
+	if player and player.position.distance_to(self.position) > 3000:
+		return
+
 	match current_mask:
 		GameManager.GAME_STATE.HAPPY:
 			if player == null:
@@ -52,9 +56,9 @@ func _physics_process(delta: float) -> void:
 			var player_size_x = player.get_node("CollisionShape2D").shape.radius
 			var player_pos_x = player.position.x + player_size_x
 
-			if (position.x + 100 < player_pos_x):
+			if (position.x + 400 < player_pos_x):
 				direction = 1
-			else:
+			elif (position.x - 400 > player_pos_x):
 				direction = -1
 
 			speed = ENEMY_SPEED
@@ -68,7 +72,7 @@ func _physics_process(delta: float) -> void:
 			
 			var player_pos_x = player.position.x + player_size_x
 			
-			if (position.x <= player_pos_x):
+			if (position.x + 200 <= player_pos_x):
 				direction = -1
 			else:
 				direction = 1

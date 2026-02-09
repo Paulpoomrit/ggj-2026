@@ -1,6 +1,7 @@
-[gd_scene load_steps=104 format=3 uid="uid://bsfa1tlsh7fwr"]
+[gd_scene load_steps=112 format=3 uid="uid://bsfa1tlsh7fwr"]
 
 [ext_resource type="Script" uid="uid://bdf8a0uau7y2d" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bnrw5uyvn7uc0" path="res://scripts/camera.gd" id="3_2yjfb"]
 [ext_resource type="Texture2D" uid="uid://dqrvbvkfvxwhw" path="res://assets/ui/Mask_select_bg.png" id="3_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://df4aoe7wr1021" path="res://assets/background_curtains.PNG" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://beiv8spglpk43" path="res://UI/item_ui.tscn" id="3_qhqgy"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bdjids2wgbrj7" path="res://assets/Moods/idle/mad/mad_idle0002.png" id="6_2w11d"]
 [ext_resource type="Texture2D" uid="uid://dxq6j2rm11sl4" path="res://assets/Moods/idle/mad/mad_idle0003.png" id="7_770dr"]
 [ext_resource type="Texture2D" uid="uid://brm2l7c526i8m" path="res://assets/Moods/idle/mad/mad_idle0004.png" id="8_8f1cb"]
+[ext_resource type="Material" uid="uid://n1ajkhqkhydw" path="res://shaders/outline_material.tres" id="8_l7gmo"]
 [ext_resource type="Texture2D" uid="uid://1sfqsppmr62s" path="res://assets/Moods/idle/mad/mad_idle0005.png" id="9_vdulj"]
 [ext_resource type="Texture2D" uid="uid://dwy68pahdeeas" path="res://assets/Moods/idle/mad/mad_idle0006.png" id="10_vau08"]
 [ext_resource type="Texture2D" uid="uid://bu1iah4xxs4ur" path="res://assets/Moods/idle/mad/mad_idle0007.png" id="11_qsb7e"]
@@ -101,6 +103,8 @@
 [ext_resource type="Texture2D" uid="uid://dx7pgxex4cxp6" path="res://assets/Moods/walk/SAD-2/sad_run0007.png" id="90_3k3j0"]
 [ext_resource type="Texture2D" uid="uid://crnou2jvpbtby" path="res://assets/Moods/walk/SAD-2/sad_run0008.png" id="91_0bpox"]
 [ext_resource type="PackedScene" uid="uid://ccn7waaxgn0fb" path="res://scenes/bgm_handler.tscn" id="101_reqs7"]
+[ext_resource type="Texture2D" uid="uid://coltmrm223xsp" path="res://assets/Particles/fuzzy_ball.png" id="103_dnnjp"]
+[ext_resource type="Shader" uid="uid://cie0yn2trxyvw" path="res://shaders/crt.gdshader" id="104_l7gmo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 15.462788
@@ -268,16 +272,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("53_5c21n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55_77pet")
-}, {
-"duration": 1.0,
 "texture": ExtResource("56_tlhxf")
 }, {
 "duration": 1.0,
 "texture": ExtResource("57_hrkfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_dnnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wqna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_l7gmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_kft7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_dnnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wqna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_l7gmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_kft7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_dnnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wqna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_l7gmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_kft7l")
 }, {
 "duration": 1.0,
 "texture": ExtResource("58_dnnjp")
@@ -303,16 +337,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("58_oxcmq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_a3eqm")
-}, {
-"duration": 1.0,
 "texture": ExtResource("61_plx2b")
 }, {
 "duration": 1.0,
 "texture": ExtResource("62_3capk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_2s4os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2em0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_qe2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_edwuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_2s4os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2em0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_qe2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_edwuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_2s4os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2em0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_qe2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_edwuo")
 }, {
 "duration": 1.0,
 "texture": ExtResource("67_2s4os")
@@ -338,16 +402,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("63_kg5hq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_2xkbm")
-}, {
-"duration": 1.0,
 "texture": ExtResource("66_dqoq3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("67_y8tjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5eiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_uukdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3k3j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_0bpox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5eiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_uukdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3k3j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_0bpox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5eiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_uukdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3k3j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_0bpox")
 }, {
 "duration": 1.0,
 "texture": ExtResource("76_5eiju")
@@ -459,8 +553,63 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="Animation" id="Animation_2yjfb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="Animation" id="Animation_reqs7"]
+resource_name = "bounce"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.3),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.65, 0.85), Vector2(0.85, 0.65), Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2yjfb"]
+_data = {
+&"RESET": SubResource("Animation_2yjfb"),
+&"bounce": SubResource("Animation_reqs7")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7gmo"]
+shader = ExtResource("104_l7gmo")
+shader_parameter/resolution = Vector2(800, 450)
+shader_parameter/scan_line_amount = 0.30000001425
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.010000000475
+shader_parameter/interference_amount = 0.050000002375
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.010000000475
+shader_parameter/roll_line_amount = 0.010000000475
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = 0.0
+
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 0
+z_index = 50
 script = ExtResource("1_g2els")
 
 [node name="BGMHandler" parent="." instance=ExtResource("101_reqs7")]
@@ -470,42 +619,56 @@ script = ExtResource("1_g2els")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, -203)
 zoom = Vector2(0.25, 0.25)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+script = ExtResource("3_2yjfb")
 
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
-position = Vector2(-1, 8)
-scale = Vector2(1.1997396, 1.1851853)
+[node name="PointLight2D" type="PointLight2D" parent="Camera2D"]
+position = Vector2(52, 119)
+shadow_enabled = true
+texture = ExtResource("103_dnnjp")
+texture_scale = 11.7
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_dqkch")
+offset = Vector2(1920.8334, 1079.1666)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -2296.0
-offset_top = 215.0
-offset_right = -232.54663
-offset_bottom = 1725.7244
-scale = Vector2(0.58, 0.58)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = 418.00003
+offset_right = 1090.0
+offset_bottom = 1277.0002
+scale = Vector2(0.27, 0.27)
 texture = ExtResource("3_3v2ag")
 
-[node name="ItemUI" parent="." instance=ExtResource("3_qhqgy")]
+[node name="ItemUI" parent="CanvasLayer" instance=ExtResource("3_qhqgy")]
 anchors_preset = 0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -2160.0
-offset_top = 700.0
-offset_right = -1861.5
-offset_bottom = 902.0
+offset_left = -2.0
+offset_top = 513.0
+offset_right = -2.0
+offset_bottom = 713.33
 grow_horizontal = 1
 grow_vertical = 1
-scale = Vector2(2.18, 2.18)
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(270.37036, 53.888855)
 size_flags_vertical = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(45, -1.9999999)
-scale = Vector2(3.99, 3.99)
+scale = Vector2(3, 3)
 skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(35, -63)
+light_mask = 2
+material = ExtResource("8_l7gmo")
+position = Vector2(35, -75)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_dqkch")
 animation = &"jump_sad"
@@ -519,3 +682,19 @@ skew = 0.01570797
 shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2yjfb")
+}
+
+[node name="Post-processing" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Post-processing"]
+material = SubResource("ShaderMaterial_l7gmo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

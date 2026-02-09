@@ -7,6 +7,7 @@ enum LEVELS {LEVEL_ONE, LEVEL_TWO, LEVEL_THREE}
 signal on_game_state_changed(state: GAME_STATE)
 signal on_pressure_plate_state_changed(is_enable: bool, target_platoform: Node)
 signal on_switch_to_level(level: LEVELS)
+signal on_camera_shake(duration: float, frequency: float, amplitude: float)
 
 const level_ref: Dictionary[LEVELS, PackedScene] = {
 	LEVELS.LEVEL_ONE: preload("res://levels/level_one.tscn"),
