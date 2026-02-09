@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coltmrm223xsp"
-path.s3tc="res://.godot/imported/fuzzy_ball.png-5a0c7145dcec89f73f0f5aee698ef522.s3tc.ctex"
+uid="uid://jxth7lft20qy"
+path.s3tc="res://.godot/imported/hex_cyan.png-2db52f039541ca690202d1b980a8652b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Particles/fuzzy_ball.png"
-dest_files=["res://.godot/imported/fuzzy_ball.png-5a0c7145dcec89f73f0f5aee698ef522.s3tc.ctex"]
+source_file="res://shaders/textures/hex_cyan.png"
+dest_files=["res://.godot/imported/hex_cyan.png-2db52f039541ca690202d1b980a8652b.s3tc.ctex"]
 
 [params]
 
