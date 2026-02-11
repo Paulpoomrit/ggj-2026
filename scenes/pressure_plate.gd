@@ -22,7 +22,12 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	
+	if not (body is PlayerBunny or body is Enemy):
+		return
+	
 	is_enable = true
+	
 	sound.play()
 	if target_object:
 		GameManager.on_pressure_plate_state_changed.emit(is_enable, target_object)

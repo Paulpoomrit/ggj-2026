@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var target_object: Gate = null
+@onready var sound : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +15,12 @@ func _process(delta: float) -> void:
 	
 
 func _on_body_entered(body: Node2D) -> void:
-	print(body.name)
+	
+	if not (body is PlayerBunny or body is Enemy):
+		return
+	
 	if target_object == null:
 		return
+	
+	sound.play()
 	target_object.on_pressure_plate_changed(true, target_object)
