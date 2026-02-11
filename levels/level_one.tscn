@@ -569,7 +569,7 @@ position = Vector2(12547.001, -54)
 scale = Vector2(1.5, 1.5)
 
 [node name="Player" parent="." instance=ExtResource("2_x25rp")]
-position = Vector2(-1810, 411)
+position = Vector2(-2322, -1579)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -9,4 +9,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
+		$AudioStreamPlayer2D.play()
+		await $AudioStreamPlayer2D.finished
 		get_tree().change_scene_to_packed(level)

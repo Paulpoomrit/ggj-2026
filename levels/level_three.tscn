@@ -565,3 +565,4 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" parent="." instance=ExtResource("6_t8sbe")]
 position = Vector2(34, -2409)
+level = 3
