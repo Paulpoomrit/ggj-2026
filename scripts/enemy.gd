@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var sound = $AudioStreamPlayer2D
 const ENEMY_SPEED = 250
 
+const POOF := preload("res://scenes/Poof.tscn")
+
 var direction = 1:
 	set(value):
 		if motion_mode == MOTION_MODE_GROUNDED:
@@ -95,3 +97,10 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if motion_mode == MOTION_MODE_GROUNDED:
 		sound.play()
+		
+		var poof := POOF.instantiate()
+		poof.scale = Vector2(0.25, 0.25)
+		poof.position += Vector2(0, -125)
+		self.add_child(poof)
+	
+	
