@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cswh721hx7yfx"]
+[gd_scene load_steps=4 format=3 uid="uid://cswh721hx7yfx"]
 
-[ext_resource type="Script" path="res://scripts/exit.gd" id="1_c4vl1"]
+[ext_resource type="Script" uid="uid://x3whjfodeyed" path="res://scripts/exit.gd" id="1_c4vl1"]
+[ext_resource type="Texture2D" uid="uid://bi232mv72fifg" path="res://assets/sprites/EndGoal.PNG" id="2_c8tsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7anx"]
 size = Vector2(408, 241)
@@ -9,7 +10,10 @@ size = Vector2(408, 241)
 script = ExtResource("1_c4vl1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(211, 121)
+scale = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_e7anx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c8tsr")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

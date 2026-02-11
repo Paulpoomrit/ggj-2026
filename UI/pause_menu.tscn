@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8k6kv2h75xam"]
+[gd_scene load_steps=8 format=3 uid="uid://c8k6kv2h75xam"]
 
-[ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_hdmo1"]
-[ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="Shader" uid="uid://dnijluxhxrmw3" path="res://UI/pause_menu.gdshader" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://c1h5lvly66co3" path="res://UI/pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="FontFile" uid="uid://byg7dgwavctkv" path="res://UI/SourGummy-SemiBold.ttf" id="3_03fe5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwcfo"]
 shader = ExtResource("1_hdmo1")
@@ -111,18 +112,26 @@ layout_mode = 2
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88235295, 0.6784314, 1)
+theme_override_fonts/font = ExtResource("3_03fe5")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88235295, 0.6784314, 1)
+theme_override_fonts/font = ExtResource("3_03fe5")
 text = "Restart"
 
 [node name="MainMenu" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88235295, 0.6784314, 1)
+theme_override_fonts/font = ExtResource("3_03fe5")
 text = "Main Menu"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88235295, 0.6784314, 1)
+theme_override_fonts/font = ExtResource("3_03fe5")
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
