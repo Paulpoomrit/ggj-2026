@@ -5,7 +5,7 @@ signal mask_selected(index: int)
 signal mask_changed(index: int)
 
 @export var arc_radius: float = 200.0
-@export var arc_angle_span: float = 90.0
+@export var arc_angle_span: float = 120.0
 @export var scroll_speed: float = 10.0
 
 @onready var item_container: Control = $ItemContainer
@@ -121,10 +121,18 @@ func scroll_next() -> void:
 		target_index += 1
 		is_scrolling = true
 		SfxManager.play_click_sfx($AudioStreamPlayer)
+	elif target_index == 2:
+		target_index = 0
+		is_scrolling = true
+		SfxManager.play_click_sfx($AudioStreamPlayer)
 
 func scroll_previous() -> void:
 	if target_index > 0:
 		target_index -= 1
+		is_scrolling = true
+		SfxManager.play_click_sfx($AudioStreamPlayer)
+	elif target_index == 0:
+		target_index = 2
 		is_scrolling = true
 		SfxManager.play_click_sfx($AudioStreamPlayer)
 
