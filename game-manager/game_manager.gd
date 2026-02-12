@@ -1,7 +1,7 @@
 extends Node
 
 enum GAME_STATE {HAPPY, ANGRY, SAD}
-enum LEVELS {LEVEL_ONE, LEVEL_TWO, LEVEL_THREE}
+enum LEVELS {LEVEL_ONE, LEVEL_TWO, LEVEL_THREE, END_SCREEN}
 
 
 signal on_game_state_changed(state: GAME_STATE)
@@ -12,7 +12,8 @@ signal on_camera_shake(duration: float, frequency: float, amplitude: float)
 const level_ref: Dictionary[LEVELS, PackedScene] = {
 	LEVELS.LEVEL_ONE: preload("res://levels/level_one.tscn"),
 	LEVELS.LEVEL_TWO: preload("res://levels/level_two.tscn"),
-	LEVELS.LEVEL_THREE: preload("res://levels/level_three.tscn")
+	LEVELS.LEVEL_THREE: preload("res://levels/level_three.tscn"),
+	LEVELS.END_SCREEN: preload("res://scenes/EndScreen.tscn")
 }
 
 # Called when the node enters the scene tree for the first time.

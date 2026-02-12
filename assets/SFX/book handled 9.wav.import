@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dn5em6llo1h4p"
+path="res://.godot/imported/book handled 9.wav-b3c6e456c0797cc2a6062067eab5bba5.sample"
+
+[deps]
+
+source_file="res://assets/SFX/book handled 9.wav"
+dest_files=["res://.godot/imported/book handled 9.wav-b3c6e456c0797cc2a6062067eab5bba5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

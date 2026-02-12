@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfk85r22a0f84"]
+[gd_scene load_steps=6 format=3 uid="uid://dfk85r22a0f84"]
 
 [ext_resource type="Script" uid="uid://c4ekh80ayvgqn" path="res://scenes/title_screen.gd" id="1_ch40n"]
 [ext_resource type="Texture2D" uid="uid://dt3afqp52kc5h" path="res://UI/FINALSPLASHSCREEN.PNG" id="1_qyuap"]
 [ext_resource type="PackedScene" uid="uid://brhxug8pmagid" path="res://levels/level_one.tscn" id="2_dfj8j"]
 [ext_resource type="FontFile" uid="uid://byg7dgwavctkv" path="res://UI/SourGummy-SemiBold.ttf" id="4_8k5og"]
+[ext_resource type="AudioStream" uid="uid://wu0k6jgxjf84" path="res://assets/SFX/button assorted 2.wav" id="5_4l16e"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -42,3 +43,6 @@ theme_override_colors/font_color = Color(1, 0.88235295, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("4_8k5og")
 theme_override_font_sizes/font_size = 32
 text = "Press Space to Play"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4l16e")
