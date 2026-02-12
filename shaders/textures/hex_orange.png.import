@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://qa6uigtaa1t7"
 path.s3tc="res://.godot/imported/hex_orange.png-f516e84375d0740f77f838f85b47996c.s3tc.ctex"
+path.etc2="res://.godot/imported/hex_orange.png-f516e84375d0740f77f838f85b47996c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://shaders/textures/hex_orange.png"
-dest_files=["res://.godot/imported/hex_orange.png-f516e84375d0740f77f838f85b47996c.s3tc.ctex"]
+dest_files=["res://.godot/imported/hex_orange.png-f516e84375d0740f77f838f85b47996c.s3tc.ctex", "res://.godot/imported/hex_orange.png-f516e84375d0740f77f838f85b47996c.etc2.ctex"]
 
 [params]
 

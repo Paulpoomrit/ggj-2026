@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://blsl0xy7ohp83"
 path.s3tc="res://.godot/imported/hex_pink.png-2aa72b007729e1d1116cf14a3627631b.s3tc.ctex"
+path.etc2="res://.godot/imported/hex_pink.png-2aa72b007729e1d1116cf14a3627631b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://shaders/textures/hex_pink.png"
-dest_files=["res://.godot/imported/hex_pink.png-2aa72b007729e1d1116cf14a3627631b.s3tc.ctex"]
+dest_files=["res://.godot/imported/hex_pink.png-2aa72b007729e1d1116cf14a3627631b.s3tc.ctex", "res://.godot/imported/hex_pink.png-2aa72b007729e1d1116cf14a3627631b.etc2.ctex"]
 
 [params]
 
